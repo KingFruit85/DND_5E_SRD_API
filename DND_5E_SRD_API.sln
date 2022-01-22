@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DND_5E_SRD_API", "DND_5E_SRD_API\DND_5E_SRD_API.csproj", "{CF39E27D-6A32-4683-8D0C-E2B8FA929171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DND_5E_SRD_API_TESTS", "DND_5E_SRD_API_TESTS\DND_5E_SRD_API_TESTS.csproj", "{5E342394-493A-4055-9413-BB072A48BDAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF39E27D-6A32-4683-8D0C-E2B8FA929171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF39E27D-6A32-4683-8D0C-E2B8FA929171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF39E27D-6A32-4683-8D0C-E2B8FA929171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF39E27D-6A32-4683-8D0C-E2B8FA929171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E342394-493A-4055-9413-BB072A48BDAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E342394-493A-4055-9413-BB072A48BDAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E342394-493A-4055-9413-BB072A48BDAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E342394-493A-4055-9413-BB072A48BDAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3260CC91-C3AB-4817-AE4B-3DC2BA293551}
+	EndGlobalSection
+EndGlobal
