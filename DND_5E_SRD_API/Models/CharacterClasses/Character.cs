@@ -305,10 +305,10 @@ namespace DND_5E_SRD_API.Models
 
             if (isBarbarian)
             {
-                // This should check for armor
+                // TODO: This should check for armor
                 ArmorClass = 10
-                                + (int)AbilityScores.getAbilityScoreModifier("DEX")
-                                + (int)AbilityScores.getAbilityScoreModifier("CON");
+                + (int)AbilityScores.getAbilityScoreModifier("DEX")
+                + (int)AbilityScores.getAbilityScoreModifier("CON");
                 return;
             }
 
@@ -327,10 +327,9 @@ namespace DND_5E_SRD_API.Models
                 if (this.ClassDetails.Armor.Name == null)
                 {
                     ArmorClass = 10
-                                    + (int)AbilityScores.getAbilityScoreModifier("DEX")
-                                    + (int)AbilityScores.getAbilityScoreModifier("WIS");
+                    + (int)AbilityScores.getAbilityScoreModifier("DEX")
+                    + (int)AbilityScores.getAbilityScoreModifier("WIS");
                     return;
-
                 }
             }
 
@@ -341,7 +340,7 @@ namespace DND_5E_SRD_API.Models
                 if (this.ClassDetails.Armor.Name == null)
                 {
                     ArmorClass = 13
-                                    + (int)AbilityScores.getAbilityScoreModifier("DEX");
+                    + (int)AbilityScores.getAbilityScoreModifier("DEX");
                     return;
                 }
             }
@@ -352,7 +351,7 @@ namespace DND_5E_SRD_API.Models
                 if (this.ClassDetails.Armor.Name == null)
                 {
                     ArmorClass = 10
-                                    + (int)AbilityScores.getAbilityScoreModifier("DEX");
+                    + (int)AbilityScores.getAbilityScoreModifier("DEX");
                     return;
                 }
             }
@@ -368,9 +367,7 @@ namespace DND_5E_SRD_API.Models
                 var abilityScoreMod = AbilityScores.getAbilityScoreModifier(modValue);
                 armorClassValue += (int)abilityScoreMod;
             }
-
             ArmorClass = armorClassValue;
-
         }
 
         public void CalculateInitiative()
