@@ -9,7 +9,6 @@ namespace DND_5E_SRD_API.Models
     {
         private List<string> CharacterClasses = new List<string> {"Bard", "Barbarian", "Cleric", "Fighter", "Monk", "Paladin", "Ranger",
                                              "Rogue", "Sorcerer", "Warlock", "Wizard", "Druid"};
-
         public string GetRandomClass()
         {
             int i = new Random().Next(0, CharacterClasses.Count);

@@ -395,5 +395,25 @@ namespace DND_5E_SRD_API.Models
             CalculateInitiative();
 
         }
+
+        public Character(string specificClass)
+        {
+            Gender = SetRandomGender();
+            RaceDetails = SetRandomRace();
+            CharacterClass = specificClass;
+            FirstName = GetRandomFirstName(Gender, RaceDetails.Name);
+            LastName = GetRandomLastName(Gender, RaceDetails.Name);
+            AbilityScores = new AbilityScores();
+            AbilityScores.Arrange(CharacterClass);
+            UpdateAbilityScores();
+            ClassDetails = GetSpecificCharacterClass(CharacterClass);
+            AddRacialProficiencies();
+            AddRacialSpells();
+            SetSkillsAndSavingThrows();
+            SetLevel1HitPoints();
+            CalculateArmorClass();
+            CalculateInitiative();
+
+        }
     }
 }
