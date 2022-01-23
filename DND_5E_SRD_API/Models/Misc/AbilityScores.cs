@@ -99,7 +99,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeBardScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -126,7 +126,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeBarbarianScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -153,7 +153,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeMonkScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -180,7 +180,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeClericScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -208,7 +208,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeDruidScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -237,7 +237,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangePaladinScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -264,7 +264,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeRangerScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -291,7 +291,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeRogueScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -318,7 +318,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeSorcererScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -345,7 +345,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeWarlockScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -372,7 +372,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeWizardScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
@@ -399,7 +399,7 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> ArrangeFighterScores(int[] rawScores)
         {
-            if (RawScores.Length > 0)
+            if (rawScores.Length > 0)
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {

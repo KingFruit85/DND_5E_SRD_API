@@ -20,6 +20,7 @@ namespace DND_5E_SRD_API.Models
         public GenericCharacterClass ClassDetails { get; set; }
         public Dictionary<string, int> Skills { get; set; }
         public Dictionary<string, int> SavingThrows { get; set; }
+        public Dictionary<string, string> BackStoryDetails { get; set;}
 
         // Getters & Setters
         public void SetRace(GenericRace race) { RaceDetails = race; }
@@ -393,7 +394,7 @@ namespace DND_5E_SRD_API.Models
             SetLevel1HitPoints();
             CalculateArmorClass();
             CalculateInitiative();
-
+            BackStoryDetails = BackStory.BackStory.GetBackstory();
         }
 
         public Character(string specificClass)
@@ -413,7 +414,7 @@ namespace DND_5E_SRD_API.Models
             SetLevel1HitPoints();
             CalculateArmorClass();
             CalculateInitiative();
-
+            BackStoryDetails = BackStory.BackStory.GetBackstory();
         }
     }
 }
