@@ -18,56 +18,58 @@ namespace DND_5E_SRD_API.Models
             {"CHA",0},
         };
 
+
         public void Arrange(string characterClassName)
         {
+            int[] rawScores = new int[] { };
             switch (characterClassName)
             {
                 case "Bard":
-                    ArrangeBardScores();
+                    ArrangeBardScores(rawScores);
                     break;
 
                 case "Barbarian":
-                    ArrangeBarbarianScores();
+                    ArrangeBarbarianScores(rawScores);
                     break;
 
                 case "Cleric":
-                    ArrangeClericScores();
+                    ArrangeClericScores(rawScores);
                     break;
 
                 case "Fighter":
-                    ArrangeFighterScores();
+                    ArrangeFighterScores(rawScores);
                     break;
 
                 case "Monk":
-                    ArrangeMonkScores();
+                    ArrangeMonkScores(rawScores);
                     break;
 
                 case "Paladin":
-                    ArrangePaladinScores();
+                    ArrangePaladinScores(rawScores);
                     break;
 
                 case "Ranger":
-                    ArrangeRangerScores();
+                    ArrangeRangerScores(rawScores);
                     break;
 
                 case "Rogue":
-                    ArrangeRogueScores();
+                    ArrangeRogueScores(rawScores);
                     break;
 
                 case "Sorcerer":
-                    ArrangeSorcererScores();
+                    ArrangeSorcererScores(rawScores);
                     break;
 
                 case "Warlock":
-                    ArrangeWarlockScores();
+                    ArrangeWarlockScores(rawScores);
                     break;
 
                 case "Wizard":
-                    ArrangeWizardScores();
+                    ArrangeWizardScores(rawScores);
                     break;
 
                 case "Druid":
-                    ArrangeDruidScores();
+                    ArrangeDruidScores(rawScores);
                     break;
 
                 default: throw new Exception("class name wasn't caught");
@@ -75,125 +77,351 @@ namespace DND_5E_SRD_API.Models
 
         }
 
-        public void ArrangeBardScores()
+        public Dictionary<string, int> Arrange(string characterClassName, int[] rawScores)
         {
-            scores["CHA"] = RawScores[0];
-            scores["DEX"] = RawScores[1];
-            scores["CON"] = RawScores[2];
-            scores["WIS"] = RawScores[3];
-            scores["STR"] = RawScores[4];
-            scores["INT"] = RawScores[5];
+            switch (characterClassName)
+            {
+                case "Bard":return ArrangeBardScores(rawScores);
+                case "Barbarian":return ArrangeBarbarianScores(rawScores);
+                case "Cleric":return ArrangeClericScores(rawScores);
+                case "Fighter":return ArrangeFighterScores(rawScores);
+                case "Monk":return ArrangeMonkScores(rawScores);
+                case "Paladin":return ArrangePaladinScores(rawScores);
+                case "Ranger":return ArrangeRangerScores(rawScores);
+                case "Rogue":return ArrangeRogueScores(rawScores);
+                case "Sorcerer":return ArrangeSorcererScores(rawScores);
+                case "Warlock":return ArrangeWarlockScores(rawScores);
+                case "Wizard":return ArrangeWizardScores(rawScores);
+                case "Druid":return ArrangeDruidScores(rawScores);
+                default: throw new Exception("class name wasn't caught");
+            }
         }
 
-        public void ArrangeBarbarianScores()
+        public Dictionary<string, int> ArrangeBardScores(int[] rawScores)
         {
-            scores["STR"] = RawScores[0];
-            scores["CON"] = RawScores[1];
-            scores["DEX"] = RawScores[2];
-            scores["WIS"] = RawScores[3];
-            scores["CHA"] = RawScores[4];
-            scores["INT"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"CHA",rawScores[0]},
+                    {"DEX",rawScores[1]},
+                    {"CON",rawScores[2]},
+                    {"WIS",rawScores[3]},
+                    {"STR",rawScores[4]},
+                    {"INT",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["CHA"] = RawScores[0];
+                scores["DEX"] = RawScores[1];
+                scores["CON"] = RawScores[2];
+                scores["WIS"] = RawScores[3];
+                scores["STR"] = RawScores[4];
+                scores["INT"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeMonkScores()
+        public Dictionary<string, int> ArrangeBarbarianScores(int[] rawScores)
         {
-            scores["DEX"] = RawScores[0];
-            scores["WIS"] = RawScores[1];
-            scores["CON"] = RawScores[2];
-            scores["STR"] = RawScores[3];
-            scores["CHA"] = RawScores[4];
-            scores["INT"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"STR",rawScores[0]},
+                    {"CON",rawScores[1]},
+                    {"DEX",rawScores[2]},
+                    {"WIS",rawScores[3]},
+                    {"CHA",rawScores[4]},
+                    {"INT",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["STR"] = RawScores[0];
+                scores["CON"] = RawScores[1];
+                scores["DEX"] = RawScores[2];
+                scores["WIS"] = RawScores[3];
+                scores["CHA"] = RawScores[4];
+                scores["INT"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeClericScores()
+        public Dictionary<string, int> ArrangeMonkScores(int[] rawScores)
         {
-            scores["WIS"] = RawScores[0];
-            scores["STR"] = RawScores[1];
-            scores["CON"] = RawScores[2];
-            scores["DEX"] = RawScores[3];
-            scores["CHA"] = RawScores[4];
-            scores["INT"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"DEX",rawScores[0]},
+                    {"WIS",rawScores[1]},
+                    {"CON",rawScores[2]},
+                    {"STR",rawScores[3]},
+                    {"CHA",rawScores[4]},
+                    {"INT",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["DEX"] = RawScores[0];
+                scores["WIS"] = RawScores[1];
+                scores["CON"] = RawScores[2];
+                scores["STR"] = RawScores[3];
+                scores["CHA"] = RawScores[4];
+                scores["INT"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
+        }
+
+        public Dictionary<string, int> ArrangeClericScores(int[] rawScores)
+        {
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"WIS",rawScores[0]},
+                    {"STR",rawScores[1]},
+                    {"CON",rawScores[2]},
+                    {"DEX",rawScores[3]},
+                    {"CHA",rawScores[4]},
+                    {"INT",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["WIS"] = RawScores[0];
+                scores["STR"] = RawScores[1];
+                scores["CON"] = RawScores[2];
+                scores["DEX"] = RawScores[3];
+                scores["CHA"] = RawScores[4];
+                scores["INT"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
 
-        public void ArrangeDruidScores()
+        public Dictionary<string, int> ArrangeDruidScores(int[] rawScores)
         {
-            scores["WIS"] = RawScores[0];
-            scores["DEX"] = RawScores[1];
-            scores["CON"] = RawScores[2];
-            scores["CHA"] = RawScores[3];
-            scores["INT"] = RawScores[4];
-            scores["STR"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"WIS",rawScores[0]},
+                    {"DEX",rawScores[1]},
+                    {"CON",rawScores[2]},
+                    {"CHA",rawScores[3]},
+                    {"INT",rawScores[4]},
+                    {"STR",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["WIS"] = RawScores[0];
+                scores["DEX"] = RawScores[1];
+                scores["CON"] = RawScores[2];
+                scores["CHA"] = RawScores[3];
+                scores["INT"] = RawScores[4];
+                scores["STR"] = RawScores[5];
+                return new Dictionary<string, int>();
+
+            }
         }
 
-        public void ArrangePaladinScores()
+
+        public Dictionary<string, int> ArrangePaladinScores(int[] rawScores)
         {
-            scores["STR"] = RawScores[0];
-            scores["CHA"] = RawScores[1];
-            scores["CON"] = RawScores[2];
-            scores["WIS"] = RawScores[3];
-            scores["DEX"] = RawScores[4];
-            scores["INT"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"WIS",rawScores[0]},
+                    {"DEX",rawScores[1]},
+                    {"CON",rawScores[2]},
+                    {"CHA",rawScores[3]},
+                    {"INT",rawScores[4]},
+                    {"STR",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["WIS"] = RawScores[0];
+                scores["DEX"] = RawScores[1];
+                scores["CON"] = RawScores[2];
+                scores["CHA"] = RawScores[3];
+                scores["INT"] = RawScores[4];
+                scores["STR"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeRangerScores()
+        public Dictionary<string, int> ArrangeRangerScores(int[] rawScores)
         {
-            scores["DEX"] = RawScores[0];
-            scores["CON"] = RawScores[1];
-            scores["WIS"] = RawScores[2];
-            scores["STR"] = RawScores[3];
-            scores["CHA"] = RawScores[4];
-            scores["INT"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"DEX",rawScores[0]},
+                    {"CON",rawScores[1]},
+                    {"WIS",rawScores[2]},
+                    {"STR",rawScores[3]},
+                    {"CHA",rawScores[4]},
+                    {"INT",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["DEX"] = RawScores[0];
+                scores["CON"] = RawScores[1];
+                scores["WIS"] = RawScores[2];
+                scores["STR"] = RawScores[3];
+                scores["CHA"] = RawScores[4];
+                scores["INT"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeRogueScores()
+        public Dictionary<string, int> ArrangeRogueScores(int[] rawScores)
         {
-            scores["DEX"] = RawScores[0];
-            scores["CON"] = RawScores[1];
-            scores["WIS"] = RawScores[2];
-            scores["CHA"] = RawScores[3];
-            scores["INT"] = RawScores[4];
-            scores["STR"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"DEX",rawScores[0]},
+                    {"CON",rawScores[1]},
+                    {"WIS",rawScores[2]},
+                    {"CHA",rawScores[3]},
+                    {"INT",rawScores[4]},
+                    {"STR",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["DEX"] = RawScores[0];
+                scores["CON"] = RawScores[1];
+                scores["WIS"] = RawScores[2];
+                scores["CHA"] = RawScores[3];
+                scores["INT"] = RawScores[4];
+                scores["STR"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeSorcererScores()
+        public Dictionary<string, int> ArrangeSorcererScores(int[] rawScores)
         {
-            scores["CHA"] = RawScores[0];
-            scores["CON"] = RawScores[1];
-            scores["INT"] = RawScores[2];
-            scores["WIS"] = RawScores[3];
-            scores["DEX"] = RawScores[4];
-            scores["STR"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"CHA",rawScores[0]},
+                    {"CON",rawScores[1]},
+                    {"INT",rawScores[2]},
+                    {"WIS",rawScores[3]},
+                    {"DEX",rawScores[4]},
+                    {"STR",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["CHA"] = RawScores[0];
+                scores["CON"] = RawScores[1];
+                scores["INT"] = RawScores[2];
+                scores["WIS"] = RawScores[3];
+                scores["DEX"] = RawScores[4];
+                scores["STR"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeWarlockScores()
+        public Dictionary<string, int> ArrangeWarlockScores(int[] rawScores)
         {
-            scores["CHA"] = RawScores[0];
-            scores["CON"] = RawScores[1];
-            scores["DEX"] = RawScores[2];
-            scores["WIS"] = RawScores[3];
-            scores["INT"] = RawScores[4];
-            scores["STR"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"CHA",rawScores[0]},
+                    {"CON",rawScores[1]},
+                    {"DEX",rawScores[2]},
+                    {"WIS",rawScores[3]},
+                    {"INT",rawScores[4]},
+                    {"STR",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["CHA"] = RawScores[0];
+                scores["CON"] = RawScores[1];
+                scores["DEX"] = RawScores[2];
+                scores["WIS"] = RawScores[3];
+                scores["INT"] = RawScores[4];
+                scores["STR"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeWizardScores()
+        public Dictionary<string, int> ArrangeWizardScores(int[] rawScores)
         {
-            scores["INT"] = RawScores[0];
-            scores["CON"] = RawScores[1];
-            scores["DEX"] = RawScores[2];
-            scores["WIS"] = RawScores[3];
-            scores["CHA"] = RawScores[4];
-            scores["STR"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"INT",rawScores[0]},
+                    {"CON",rawScores[1]},
+                    {"DEX",rawScores[2]},
+                    {"WIS",rawScores[3]},
+                    {"CHA",rawScores[4]},
+                    {"STR",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["INT"] = RawScores[0];
+                scores["CON"] = RawScores[1];
+                scores["DEX"] = RawScores[2];
+                scores["WIS"] = RawScores[3];
+                scores["CHA"] = RawScores[4];
+                scores["STR"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
-        public void ArrangeFighterScores()
+        public Dictionary<string, int> ArrangeFighterScores(int[] rawScores)
         {
-            scores["STR"] = RawScores[0];
-            scores["CON"] = RawScores[1];
-            scores["DEX"] = RawScores[2];
-            scores["WIS"] = RawScores[3];
-            scores["CHA"] = RawScores[4];
-            scores["INT"] = RawScores[5];
+            if (RawScores.Length > 0)
+            {
+                Dictionary<string, int> _scores = new Dictionary<string, int>()
+                {
+                    {"STR",rawScores[0]},
+                    {"CON",rawScores[1]},
+                    {"DEX",rawScores[2]},
+                    {"WIS",rawScores[3]},
+                    {"CHA",rawScores[4]},
+                    {"INT",rawScores[5]},
+                };
+                return _scores;
+            }
+            else
+            {
+                scores["STR"] = RawScores[0];
+                scores["CON"] = RawScores[1];
+                scores["DEX"] = RawScores[2];
+                scores["WIS"] = RawScores[3];
+                scores["CHA"] = RawScores[4];
+                scores["INT"] = RawScores[5];
+                return new Dictionary<string, int>();
+            }
         }
 
         public int[] GetRawScores()
