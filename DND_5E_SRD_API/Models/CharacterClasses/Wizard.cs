@@ -9,7 +9,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Wizard()
         {
-            SetName("Wizard");
+            SetName("wizard");
             HitDie = "1d6";
 
             ///////////////////z
@@ -20,26 +20,26 @@ namespace DND_5E_SRD_API.Controllers
 
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){}},
-                {"Weapons",new List<string>(){"Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Intelligence", "Wisdom"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){}},
+                {"weapons",new List<string>(){"Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Intelligence", "Wisdom"}},
+                {"skills", new List<string>(){}}
             };
 
             // Wizards can select two skills from the following list
             var wizardSkillProfs = new List<string>()
             {
-                "Arcana", 
-                "History", 
-                "Insight", 
-                "Investigation", 
-                "Medicine",
-                "Religion"
+                "arcana", 
+                "history", 
+                "insight", 
+                "investigation", 
+                "medicine",
+                "religion"
             };
 
-            Proficiencies["Skills"].Add(wizardSkillProfs[0]);
-            Proficiencies["Skills"].Add(wizardSkillProfs[1]);
+            Proficiencies["skills"].Add(wizardSkillProfs[0]);
+            Proficiencies["skills"].Add(wizardSkillProfs[1]);
 
             SetProficiencies(Proficiencies);
 
@@ -84,7 +84,7 @@ namespace DND_5E_SRD_API.Controllers
             }
 
             // A spellbook
-            OtherEquipment.Add("Spellbook");
+            OtherEquipment.Add("spellbook");
 
             //////////////
             //  SPELLS  //
@@ -138,7 +138,7 @@ namespace DND_5E_SRD_API.Controllers
                 "Mage Armor",
                 "Magic Missile",
                 "Protection from Evil and Good",
-                "Shield",
+                "shield",
                 "Silent Image",
                 "Sleep",
                 "Thunderwave",

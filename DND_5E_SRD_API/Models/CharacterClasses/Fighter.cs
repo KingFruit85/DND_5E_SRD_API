@@ -18,30 +18,30 @@ namespace DND_5E_SRD_API.Controllers
             SetProficiencyBonus(2);
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){ "Light Armor", "Medium Armor", "Heavy Armor","Shields"}},
-                {"Weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Strength", "Constitution"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){ "Light Armor", "Medium Armor", "Heavy Armor","Shields"}},
+                {"weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Strength", "Constitution"}},
+                {"skills", new List<string>(){}}
             };
 
             // Fighters can select two skills from the following list
             var fighterSkillProfs = new List<string>()
             {
-                "Acrobatics",
-                "Animal Handling",
-                "Athletics",
-                "History",
-                "Insight",
-                "Intimidation",
-                "Perception",
-                "Survival"
+                "acrobatics",
+                "animal handling",
+                "athletics",
+                "history",
+                "insight",
+                "intimidation",
+                "perception",
+                "survival"
             };
 
             // Shuffle list and add the top two
             fighterSkillProfs = Tools.ShuffleList(fighterSkillProfs);
-            Proficiencies["Skills"].Add(fighterSkillProfs[0]);
-            Proficiencies["Skills"].Add(fighterSkillProfs[1]);
+            Proficiencies["skills"].Add(fighterSkillProfs[0]);
+            Proficiencies["skills"].Add(fighterSkillProfs[1]);
 
             SetProficiencies(Proficiencies);
 
@@ -76,7 +76,7 @@ namespace DND_5E_SRD_API.Controllers
                 case 0:
                     weaponToAdd = Tools.ShuffleList(martialWeapons)[0];
                     PrimaryWeapon = weaponToAdd;
-                    Shield = new Shield("Shield");
+                    Shield = new Shield("shield");
                     break;
                 case 1:
                     // Get 1-h martial weapons and add to mainhand and offhand

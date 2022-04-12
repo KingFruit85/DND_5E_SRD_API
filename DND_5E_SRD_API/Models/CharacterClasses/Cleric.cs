@@ -18,27 +18,27 @@ namespace DND_5E_SRD_API.Controllers
             SetProficiencyBonus(2);
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){ "Light Armor", "Medium Armor", "Shields"}},
-                {"Weapons",new List<string>(){"Simple Weapons"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Wisdom", "Charisma"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){ "Light Armor", "Medium Armor", "Shields"}},
+                {"weapons",new List<string>(){"Simple Weapons"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Wisdom", "Charisma"}},
+                {"skills", new List<string>(){}}
             };
 
             // Clerics can select two skills from the following list
             var clericSkillProfs = new List<string>()
             {
-                "History",
-                "Insight",
-                "Medicine",
-                "Persuasion",
-                "Religion"
+                "history",
+                "insight",
+                "medicine",
+                "persuasion",
+                "religion"
             };
 
             // Shuffle list and add the top two
             clericSkillProfs = Tools.ShuffleList(clericSkillProfs);
-            Proficiencies["Skills"].Add(clericSkillProfs[0]);
-            Proficiencies["Skills"].Add(clericSkillProfs[1]);
+            Proficiencies["skills"].Add(clericSkillProfs[0]);
+            Proficiencies["skills"].Add(clericSkillProfs[1]);
 
             // SRD Clerics can only be life domain, they are proficient in heavy armor
             Proficiencies["Armor"].Add("Heavy Armor");
@@ -89,7 +89,7 @@ namespace DND_5E_SRD_API.Controllers
             }
 
             // Clerics get a shield and a holy symbol
-            Shield = new Shield("Shield");
+            Shield = new Shield("shield");
             HolySymbol = new HolySymbol("Holy Symbol");
 
             ///////////////

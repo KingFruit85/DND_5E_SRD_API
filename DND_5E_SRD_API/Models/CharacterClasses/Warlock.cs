@@ -9,7 +9,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Warlock()
         {
-            SetName("Warlock");
+            SetName("warlock");
             HitDie = "1d8";
 
             ///////////////////
@@ -20,27 +20,27 @@ namespace DND_5E_SRD_API.Controllers
 
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){"Light Armor"}},
-                {"Weapons",new List<string>(){"Simple Weapons"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Wisdom", "Charisma"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){"Light Armor"}},
+                {"weapons",new List<string>(){"Simple Weapons"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Wisdom", "Charisma"}},
+                {"skills", new List<string>(){}}
             };
 
             // Warlocks can select two skills from the following list
             var warlockSkillProfs = new List<string>()
             {
-                "Arcana", 
+                "arcana", 
                 "Deception", 
-                "History", 
-                "Intimidation", 
-                "Investigation", 
-                "Nature",
-                "Religion"
+                "history", 
+                "intimidation", 
+                "investigation", 
+                "nature",
+                "religion"
             };
 
-            Proficiencies["Skills"].Add(warlockSkillProfs[0]);
-            Proficiencies["Skills"].Add(warlockSkillProfs[1]);
+            Proficiencies["skills"].Add(warlockSkillProfs[0]);
+            Proficiencies["skills"].Add(warlockSkillProfs[1]);
 
             SetProficiencies(Proficiencies);
 

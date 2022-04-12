@@ -8,7 +8,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Monk()
         {
-            SetName("Monk");
+            SetName("monk");
             HitDie = "1d8";
 
             ///////////////////
@@ -19,11 +19,11 @@ namespace DND_5E_SRD_API.Controllers
 
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){}},
-                {"Weapons",new List<string>(){"Simple Weapons", "Shortswords"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Strength", "Dexterity"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){}},
+                {"weapons",new List<string>(){"Simple Weapons", "Shortswords"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Strength", "Dexterity"}},
+                {"skills", new List<string>(){}}
             };
 
             // Monks can select either one musical instrument or one artisan tool to be proficient in
@@ -33,30 +33,30 @@ namespace DND_5E_SRD_API.Controllers
                 case 0:
                     var toolList = new Equipment().ReturnArtisansToolList().artisansTools;
                     toolList = Tools.ShuffleList(toolList);
-                    Proficiencies["Tools"].Add(toolList[0].Name);
+                    Proficiencies["tools"].Add(toolList[0].Name);
                     break;
                 case 1:
                     var instrumentList = new Equipment().MusicalInstrument().MusicalInstruments;
                     instrumentList = Tools.ShuffleList(instrumentList);
-                    Proficiencies["Tools"].Add(instrumentList[0].Name);
+                    Proficiencies["tools"].Add(instrumentList[0].Name);
                     break;
             }
 
             // Monks can select two skills from the following list
             var fighterSkillProfs = new List<string>()
             {
-                "Acrobatics",
-                "Athletics",
-                "History",
-                "Insight",
-                "Religion",
-                "Stealth"
+                "acrobatics",
+                "athletics",
+                "history",
+                "insight",
+                "religion",
+                "stealth"
             };
 
             // Shuffle list and add the top two
             fighterSkillProfs = Tools.ShuffleList(fighterSkillProfs);
-            Proficiencies["Skills"].Add(fighterSkillProfs[0]);
-            Proficiencies["Skills"].Add(fighterSkillProfs[1]);
+            Proficiencies["skills"].Add(fighterSkillProfs[0]);
+            Proficiencies["skills"].Add(fighterSkillProfs[1]);
 
             SetProficiencies(Proficiencies);
 
@@ -105,10 +105,6 @@ namespace DND_5E_SRD_API.Controllers
 
             Features.Add(new Feature("Unarmored Defense","",1));
             Features.Add(new Feature("Martial Arts","",1));
-
-
-
-
            
         }
     }

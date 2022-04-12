@@ -9,7 +9,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Sorcerer()
         {
-            SetName("Sorcerer");
+            SetName("sorcerer");
             HitDie = "1d8";
 
             ///////////////////
@@ -19,28 +19,28 @@ namespace DND_5E_SRD_API.Controllers
             SetProficiencyBonus(2);
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){}},
-                {"Weapons",new List<string>(){"Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows"}},
-                {"Tools", new List<string>(){}},
-                {"Saving Throws", new List<string>(){"Constitution", "Charisma"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){}},
+                {"weapons",new List<string>(){"Daggers", "Darts", "Slings", "Quarterstaffs", "Light Crossbows"}},
+                {"tools", new List<string>(){}},
+                {"saving throws", new List<string>(){"Constitution", "Charisma"}},
+                {"skills", new List<string>(){}}
             };
 
             // Sorcerers can select two skills from the following list
             var sorcererSkillProfs = new List<string>()
             {
-                 "Arcana", 
+                 "arcana", 
                  "Deception", 
-                 "Insight", 
-                 "Intimidation", 
-                 "Persuasion",
-                 "Religion"
+                 "insight", 
+                 "intimidation", 
+                 "persuasion",
+                 "religion"
             };
 
             // Shuffle list and add the top two
             sorcererSkillProfs = Tools.ShuffleList(sorcererSkillProfs);
-            Proficiencies["Skills"].Add(sorcererSkillProfs[0]);
-            Proficiencies["Skills"].Add(sorcererSkillProfs[1]);
+            Proficiencies["skills"].Add(sorcererSkillProfs[0]);
+            Proficiencies["skills"].Add(sorcererSkillProfs[1]);
 
 
             SetProficiencies(Proficiencies);
@@ -137,7 +137,7 @@ namespace DND_5E_SRD_API.Controllers
                 "Jump",
                 "Mage Armor",
                 "Magic Missile",
-                "Shield",
+                "shield",
                 "Silent Image",
                 "Sleep",
                 "Thunderwave"

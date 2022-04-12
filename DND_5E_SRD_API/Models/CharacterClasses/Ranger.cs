@@ -8,7 +8,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Ranger()
         {
-            SetName("Ranger");
+            SetName("ranger");
             HitDie = "1d10";
 
             ///////////////////
@@ -18,31 +18,31 @@ namespace DND_5E_SRD_API.Controllers
             SetProficiencyBonus(2);
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){ "Light Armor", "Medium Armor", "Shields"}},
-                {"Weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Strength", "Dexterity"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){ "Light Armor", "Medium Armor", "Shields"}},
+                {"weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Strength", "Dexterity"}},
+                {"skills", new List<string>(){}}
             };
 
             // Paladins can select two skills from the following list
             var rangerSkillProfs = new List<string>()
             {
-                "Animal Handling", 
-                "Athletics", 
-                "Insight", 
-                "Investigation", 
-                "Nature", 
-                "Perception", 
-                "Stealth",
-                "Survival"
+                "animal handling", 
+                "athletics", 
+                "insight", 
+                "investigation", 
+                "nature", 
+                "perception", 
+                "stealth",
+                "survival"
             };
 
             // Shuffle list and add the top three
             rangerSkillProfs = Tools.ShuffleList(rangerSkillProfs);
-            Proficiencies["Skills"].Add(rangerSkillProfs[0]);
-            Proficiencies["Skills"].Add(rangerSkillProfs[1]);
-            Proficiencies["Skills"].Add(rangerSkillProfs[2]);
+            Proficiencies["skills"].Add(rangerSkillProfs[0]);
+            Proficiencies["skills"].Add(rangerSkillProfs[1]);
+            Proficiencies["skills"].Add(rangerSkillProfs[2]);
 
             SetProficiencies(Proficiencies);
 

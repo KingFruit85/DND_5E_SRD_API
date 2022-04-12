@@ -9,7 +9,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Bard()
         {
-            SetName("Bard");
+            SetName("bard");
             HitDie = "1d8";
 
             ///////////////////
@@ -20,19 +20,19 @@ namespace DND_5E_SRD_API.Controllers
 
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){"Light Armor"}},
-                {"Weapons",new List<string>(){"Simple Weapons", "Hand Crossbows", "Longswords", "Rapiers", "Shortswords"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Dexterity", "Charisma"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){"Light Armor"}},
+                {"weapons",new List<string>(){"Simple Weapons", "Hand Crossbows", "Longswords", "Rapiers", "Shortswords"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Dexterity", "Charisma"}},
+                {"skills", new List<string>(){}}
             };
 
             // Get 3 random instrument profs
             var instrumentList = new Equipment().MusicalInstrument().MusicalInstruments;
             instrumentList = Tools.ShuffleList(instrumentList);
-            Proficiencies["Tools"].Add(instrumentList[0].Name);
-            Proficiencies["Tools"].Add(instrumentList[1].Name);
-            Proficiencies["Tools"].Add(instrumentList[2].Name);
+            Proficiencies["tools"].Add(instrumentList[0].Name);
+            Proficiencies["tools"].Add(instrumentList[1].Name);
+            Proficiencies["tools"].Add(instrumentList[2].Name);
 
             var bardSkillProfs = new List<string>()
             {
@@ -58,9 +58,9 @@ namespace DND_5E_SRD_API.Controllers
 
             // Get 3 ransom skill profs
             bardSkillProfs = Tools.ShuffleList(bardSkillProfs);
-            Proficiencies["Skills"].Add(bardSkillProfs[0]);
-            Proficiencies["Skills"].Add(bardSkillProfs[1]);
-            Proficiencies["Skills"].Add(bardSkillProfs[2]);
+            Proficiencies["skills"].Add(bardSkillProfs[0]);
+            Proficiencies["skills"].Add(bardSkillProfs[1]);
+            Proficiencies["skills"].Add(bardSkillProfs[2]);
 
             SetProficiencies(Proficiencies);
 
@@ -72,7 +72,7 @@ namespace DND_5E_SRD_API.Controllers
             // My implimentation only adds a lute if we're proficient
             // If not, then add a random instrument we are proficient in
 
-            if (Proficiencies["Tools"].Contains("Lute"))
+            if (Proficiencies["tools"].Contains("Lute"))
             {
                 var lute = new Equipment().MusicalInstrument().MusicalInstruments.Where(i => i.Name == "Lute").ToList()[0];
                 MusicalInstruments.Add(lute);
@@ -80,7 +80,7 @@ namespace DND_5E_SRD_API.Controllers
             else
             {
                 // Get a random instrument we are proficient in as a string
-                var proficientInstrument = Tools.ShuffleList(Proficiencies["Tools"]).ToList()[0];
+                var proficientInstrument = Tools.ShuffleList(Proficiencies["tools"]).ToList()[0];
                 // Reterive the instrument object
                 var instrument = new Equipment().MusicalInstrument().MusicalInstruments.Where(i => i.Name == proficientInstrument).ToList()[0];
                 MusicalInstruments.Add(instrument);

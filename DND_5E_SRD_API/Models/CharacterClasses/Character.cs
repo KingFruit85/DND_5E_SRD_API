@@ -239,7 +239,7 @@ namespace DND_5E_SRD_API.Models
             {
                 default: throw new Exception("Unknown Character Class provided as argument");
                 case "bard": return new Bard();
-                case "Barbarian": return new Barbarian();
+                case "barbarian": return new Barbarian();
                 case "cleric": return new Cleric(); 
                 case "fighter": return new Fighter(); 
                 case "monk": return new Monk(); 
@@ -249,7 +249,7 @@ namespace DND_5E_SRD_API.Models
                 case "sorcerer": return new Sorcerer(); 
                 case "warlock": return new Warlock(); 
                 case "wizard": return new Wizard(); 
-                case "Druid": return new Druid(); 
+                case "druid": return new Druid(); 
             }
         }
 
@@ -260,10 +260,10 @@ namespace DND_5E_SRD_API.Models
             switch (ClassDetails.Name)
             {
                 default: throw new Exception("invalid characterClass provided");
-                case "Barbarian": HitPoints = 12 + constitutionModifier; break;
+                case "barbarian": HitPoints = 12 + constitutionModifier; break;
                 case "bard": HitPoints = 8 + constitutionModifier; break;
                 case "cleric": HitPoints = 8 + constitutionModifier; break;
-                case "Druid": HitPoints = 8 + constitutionModifier; break;
+                case "druid": HitPoints = 8 + constitutionModifier; break;
                 case "fighter": HitPoints = 10 + constitutionModifier; break;
                 case "monk": HitPoints = 8 + constitutionModifier; break;
                 case "paladin": HitPoints = 10 + constitutionModifier; break;

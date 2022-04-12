@@ -8,7 +8,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Druid()
         {
-            SetName("Druid");
+            SetName("druid");
             HitDie = "1d8";
 
             ///////////////////
@@ -18,30 +18,30 @@ namespace DND_5E_SRD_API.Controllers
             SetProficiencyBonus(2);
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){"Light Armor (Non - Metal)", "Medium Armor (Non - Metal)", "Shields (Non - Metal)" }}, // (druids will not wear armor or use shields made of metal)
-                {"Weapons",new List<string>(){"Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears"}},
-                {"Tools", new List<string>(){"Herbalism Kit"}},
-                {"Saving Throws", new List<string>(){"Intelligence", "Wisdom"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){"Light Armor (Non - Metal)", "Medium Armor (Non - Metal)", "Shields (Non - Metal)" }}, // (druids will not wear armor or use shields made of metal)
+                {"weapons",new List<string>(){"Clubs", "Daggers", "Darts", "Javelins", "Maces", "Quarterstaffs", "Scimitars", "Sickles", "Slings", "Spears"}},
+                {"tools", new List<string>(){"Herbalism Kit"}},
+                {"saving throws", new List<string>(){"Intelligence", "Wisdom"}},
+                {"skills", new List<string>(){}}
             };
 
             // Druids can select two skills from the following list
             var druidSkillProfs = new List<string>()
             {
-                 "Arcana", 
-                 "Animal Handling", 
-                 "Insight", 
-                 "Medicine", 
-                 "Nature", 
-                 "Perception", 
-                 "Religion",
-                 "Survival"
+                 "arcana", 
+                 "animal handling", 
+                 "insight", 
+                 "medicine", 
+                 "nature", 
+                 "perception", 
+                 "religion",
+                 "survival"
             };
 
             // Shuffle list and add the top two
             druidSkillProfs = Tools.ShuffleList(druidSkillProfs);
-            Proficiencies["Skills"].Add(druidSkillProfs[0]);
-            Proficiencies["Skills"].Add(druidSkillProfs[1]);
+            Proficiencies["skills"].Add(druidSkillProfs[0]);
+            Proficiencies["skills"].Add(druidSkillProfs[1]);
 
             SetProficiencies(Proficiencies);
 
@@ -57,7 +57,7 @@ namespace DND_5E_SRD_API.Controllers
                         {
                             default: throw new System.Exception("number not in range");
                             case 0:
-                                Shield = new Shield("Wooden Shield");
+                                Shield = new Shield("wooden shield");
                                 break;
                             case 1:
                                 AdditionalWeapons.Add(Tools.ShuffleList(simpleWeapons)[0]);

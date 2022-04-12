@@ -9,34 +9,34 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Barbarian()
         {
-            SetName("Barbarian");
+            SetName("barbarian");
             SetProficiencyBonus(2);
             HitDie = "1d12";
 
             // Populate Proficiencies
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){"Light Armor", "Medium Armor", "Shields"}},
-                {"Weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Strength", "Constitution"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){"Light Armor", "Medium Armor", "Shields"}},
+                {"weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Strength", "Constitution"}},
+                {"skills", new List<string>(){}}
             };
 
             // Barbarians can select two skills from the following list
             var barbSkillProfs = new List<string>()
             {
-                "Animal Handling",
-                "Athletics",
-                "Intimidation",
-                "Nature",
-                "Perception",
-                "Survival"
+                "animal handling",
+                "athletics",
+                "intimidation",
+                "nature",
+                "perception",
+                "survival"
             };
             // Shuffle list and add the top two
             barbSkillProfs = Tools.ShuffleList(barbSkillProfs);
-            Proficiencies["Skills"].Add(barbSkillProfs[0]);
-            Proficiencies["Skills"].Add(barbSkillProfs[1]);
+            Proficiencies["skills"].Add(barbSkillProfs[0]);
+            Proficiencies["skills"].Add(barbSkillProfs[1]);
 
             SetProficiencies(Proficiencies);
 

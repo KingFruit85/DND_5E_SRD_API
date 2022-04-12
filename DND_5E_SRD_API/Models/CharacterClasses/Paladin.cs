@@ -8,7 +8,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Paladin()
         {
-            SetName("Paladin");
+            SetName("paladin");
             HitDie = "1d10";
 
             ///////////////////
@@ -18,28 +18,28 @@ namespace DND_5E_SRD_API.Controllers
             SetProficiencyBonus(2);
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){ "Light Armor", "Medium Armor", "Shields"}},
-                {"Weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
-                {"Tools", new List<string>()},
-                {"Saving Throws", new List<string>(){"Wisdom", "Charisma"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){ "Light Armor", "Medium Armor", "Shields"}},
+                {"weapons",new List<string>(){"Simple Weapons", "Martial Weapons"}},
+                {"tools", new List<string>()},
+                {"saving throws", new List<string>(){"Wisdom", "Charisma"}},
+                {"skills", new List<string>(){}}
             };
 
             // Paladins can select two skills from the following list
             var paladinSkillProfs = new List<string>()
             {
-                "Athletics", 
-                "Insight", 
-                "Intimidation", 
-                "Medicine", 
-                "Persuasion",
-                "Religion"
+                "athletics", 
+                "insight", 
+                "intimidation", 
+                "medicine", 
+                "persuasion",
+                "religion"
             };
 
             // Shuffle list and add the top two
             paladinSkillProfs = Tools.ShuffleList(paladinSkillProfs);
-            Proficiencies["Skills"].Add(paladinSkillProfs[0]);
-            Proficiencies["Skills"].Add(paladinSkillProfs[1]);
+            Proficiencies["skills"].Add(paladinSkillProfs[0]);
+            Proficiencies["skills"].Add(paladinSkillProfs[1]);
 
             SetProficiencies(Proficiencies);
 
@@ -57,7 +57,7 @@ namespace DND_5E_SRD_API.Controllers
                 case 0:
                     Weapon weapon = Tools.ShuffleList(martialWeapons)[0];
                     PrimaryWeapon = weapon;
-                    Shield = new Shield("Shield");
+                    Shield = new Shield("shield");
                     break; 
                 case 1:
                     // I assume the two weapons imply duel-weilding

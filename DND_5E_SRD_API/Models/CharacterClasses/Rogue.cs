@@ -8,7 +8,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Rogue()
         {
-            SetName("Rogue");
+            SetName("rogue");
             HitDie = "1d8";
 
             ///////////////////
@@ -18,35 +18,35 @@ namespace DND_5E_SRD_API.Controllers
             SetProficiencyBonus(2);
             var Proficiencies = new Dictionary<string,List<string>>()
             {
-                {"Armor", new List<string>(){"Light Armor"}},
-                {"Weapons",new List<string>(){"Simple Weapons", "Hand Crossbow", "Longsword", "Rapiers", "Shortsword"}},
-                {"Tools", new List<string>(){"Thieves’ Tools"}},
-                {"Saving Throws", new List<string>(){"Dexterity", "Intelligence"}},
-                {"Skills", new List<string>(){}}
+                {"armor", new List<string>(){"Light Armor"}},
+                {"weapons",new List<string>(){"Simple Weapons", "Hand Crossbow", "Longsword", "Rapiers", "Shortsword"}},
+                {"tools", new List<string>(){"Thieves’ Tools"}},
+                {"saving throws", new List<string>(){"Dexterity", "Intelligence"}},
+                {"skills", new List<string>(){}}
             };
 
             // Rogues can select four skills from the following list
             var rogueSkillProfs = new List<string>()
             {
-                 "Acrobatics", 
-                 "Athletics", 
+                 "acrobatics", 
+                 "athletics", 
                  "Deception", 
-                 "Insight", 
-                 "Intimidation", 
-                 "Investigation", 
-                 "Perception", 
+                 "insight", 
+                 "intimidation", 
+                 "investigation", 
+                 "perception", 
                  "Performance", 
-                 "Persuasion", 
+                 "persuasion", 
                  "Sleight of Hand",
-                 "Stealth"
+                 "stealth"
             };
 
             // Shuffle list and add the top four
             rogueSkillProfs = Tools.ShuffleList(rogueSkillProfs);
-            Proficiencies["Skills"].Add(rogueSkillProfs[0]);
-            Proficiencies["Skills"].Add(rogueSkillProfs[1]);
-            Proficiencies["Skills"].Add(rogueSkillProfs[2]);
-            Proficiencies["Skills"].Add(rogueSkillProfs[3]);
+            Proficiencies["skills"].Add(rogueSkillProfs[0]);
+            Proficiencies["skills"].Add(rogueSkillProfs[1]);
+            Proficiencies["skills"].Add(rogueSkillProfs[2]);
+            Proficiencies["skills"].Add(rogueSkillProfs[3]);
 
 
             SetProficiencies(Proficiencies);
