@@ -1,8 +1,6 @@
 ﻿using DND_5E_SRD_API.Controllers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DND_5E_SRD_API.Models
 {
@@ -88,8 +86,8 @@ namespace DND_5E_SRD_API.Models
             switch (characterClass)
             {
                 default: throw new Exception("Invalid character class provided");
-                case "Bard": return new Bard();
-                case "Barbarian": return new Barbarian();
+                case "bard": return new Bard();
+                case "barbarian": return new Barbarian();
             }
         }
     }
