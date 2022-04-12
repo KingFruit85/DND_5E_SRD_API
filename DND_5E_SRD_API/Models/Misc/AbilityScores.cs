@@ -22,53 +22,53 @@ namespace DND_5E_SRD_API.Models
         public void Arrange(string characterClassName)
         {
             int[] rawScores = new int[] { };
-            switch (characterClassName)
+            switch (characterClassName.ToLower().Trim())
             {
-                case "Bard":
+                case "bard":
                     ArrangeBardScores(rawScores);
                     break;
 
-                case "Barbarian":
+                case "barbarian":
                     ArrangeBarbarianScores(rawScores);
                     break;
 
-                case "Cleric":
+                case "cleric":
                     ArrangeClericScores(rawScores);
                     break;
 
-                case "Fighter":
+                case "fighter":
                     ArrangeFighterScores(rawScores);
                     break;
 
-                case "Monk":
+                case "monk":
                     ArrangeMonkScores(rawScores);
                     break;
 
-                case "Paladin":
+                case "paladin":
                     ArrangePaladinScores(rawScores);
                     break;
 
-                case "Ranger":
+                case "ranger":
                     ArrangeRangerScores(rawScores);
                     break;
 
-                case "Rogue":
+                case "rogue":
                     ArrangeRogueScores(rawScores);
                     break;
 
-                case "Sorcerer":
+                case "sorcerer":
                     ArrangeSorcererScores(rawScores);
                     break;
 
-                case "Warlock":
+                case "warlock":
                     ArrangeWarlockScores(rawScores);
                     break;
 
-                case "Wizard":
+                case "wizard":
                     ArrangeWizardScores(rawScores);
                     break;
 
-                case "Druid":
+                case "druid":
                     ArrangeDruidScores(rawScores);
                     break;
 
@@ -79,20 +79,20 @@ namespace DND_5E_SRD_API.Models
 
         public Dictionary<string, int> Arrange(string characterClassName, int[] rawScores)
         {
-            switch (characterClassName)
+            switch (characterClassName.ToLower().Trim())
             {
-                case "Bard":return ArrangeBardScores(rawScores);
-                case "Barbarian":return ArrangeBarbarianScores(rawScores);
-                case "Cleric":return ArrangeClericScores(rawScores);
-                case "Fighter":return ArrangeFighterScores(rawScores);
-                case "Monk":return ArrangeMonkScores(rawScores);
-                case "Paladin":return ArrangePaladinScores(rawScores);
-                case "Ranger":return ArrangeRangerScores(rawScores);
-                case "Rogue":return ArrangeRogueScores(rawScores);
-                case "Sorcerer":return ArrangeSorcererScores(rawScores);
-                case "Warlock":return ArrangeWarlockScores(rawScores);
-                case "Wizard":return ArrangeWizardScores(rawScores);
-                case "Druid":return ArrangeDruidScores(rawScores);
+                case "bard":return ArrangeBardScores(rawScores);
+                case "barbarian":return ArrangeBarbarianScores(rawScores);
+                case "cleric":return ArrangeClericScores(rawScores);
+                case "fighter":return ArrangeFighterScores(rawScores);
+                case "monk":return ArrangeMonkScores(rawScores);
+                case "paladin":return ArrangePaladinScores(rawScores);
+                case "ranger":return ArrangeRangerScores(rawScores);
+                case "rogue":return ArrangeRogueScores(rawScores);
+                case "sorcerer":return ArrangeSorcererScores(rawScores);
+                case "warlock":return ArrangeWarlockScores(rawScores);
+                case "wizard":return ArrangeWizardScores(rawScores);
+                case "druid":return ArrangeDruidScores(rawScores);
                 default: throw new Exception("class name wasn't caught");
             }
         }
