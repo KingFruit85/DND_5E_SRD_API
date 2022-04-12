@@ -23,12 +23,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleDragonbornNames.Length);
             return MaleDragonbornNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleDragonbornNames.Length);
             return FemaleDragonbornNames[f]; 
@@ -57,12 +57,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleHumanNames.Length);
             return MaleHumanNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleHumanNames.Length);
             return FemaleHumanNames[f]; 
@@ -91,12 +91,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleDwarfNames.Length);
             return MaleDwarfNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleDwarfNames.Length);
             return FemaleDwarfNames[f]; 
@@ -125,12 +125,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleElfNames.Length);
             return MaleElfNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleElfNames.Length);
             return FemaleElfNames[f]; 
@@ -159,12 +159,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleGnomeNames.Length);
             return MaleGnomeNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleGnomeNames.Length);
             return FemaleGnomeNames[f]; 
@@ -193,12 +193,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleHalfElfNames.Length);
             return MaleHalfElfNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleHalfElfNames.Length);
             return FemaleHalfElfNames[f]; 
@@ -227,12 +227,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleHalfOrcNames.Length);
             return MaleHalfOrcNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleHalfOrcNames.Length);
             return FemaleHalfOrcNames[f]; 
@@ -261,12 +261,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleHalflingNames.Length);
             return MaleHalflingNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleHalflingNames.Length);
             return FemaleHalflingNames[f]; 
@@ -295,12 +295,12 @@ namespace DND_5E_SRD_API.Models
 
         Random R = new Random();
 
-        if (gender == "Male")
+        if (gender == "male")
         {
             int m = R.Next(0, MaleTieflingNames.Length);
             return MaleTieflingNames[m];
         }
-        else if (gender == "Female")
+        else if (gender == "female")
         {
             int f = R.Next(0, FemaleTieflingNames.Length);
             return FemaleTieflingNames[f]; 
@@ -325,46 +325,45 @@ namespace DND_5E_SRD_API.Models
         
         switch (race)
         {   
-            case "Human":
+            case "human":
                 FullName[0] = GetRandomHumanFirstName(gender);
                 FullName[1] = GetRandomHumanSurnameName();
                 break;
-            case "Dragonborn":
+            case "dragonborn":
                 FullName[0] = GetRandomDragonbornFirstName(gender);
                 FullName[1] = GetRandomDragonbornSurnameName();
                 break;
-            case "Dwarf":
+            case "dwarf":
                 FullName[0] = GetRandomDwarfFirstName(gender);
                 FullName[1] = GetRandomDwarfSurnameName();
                 break;
-            case "Elf":
+            case "elf":
                 FullName[0] = GetRandomElfFirstName(gender);
                 FullName[1] = GetRandomElfSurnameName();
                 break;
-            case "Gnome":
+            case "gnome":
                 FullName[0] = GetRandomGnomeFirstName(gender);
                 FullName[1] = GetRandomGnomeSurnameName();
                 break;
-            case "Half-Elf":
+            case "half-elf":
                 FullName[0] = GetRandomHalfElfFirstName(gender);
                 FullName[1] = GetRandomHalfElfSurnameName();
                 break;
-            case "Half-Orc":
+            case "half-orc":
                 FullName[0] = GetRandomHalfOrcFirstName(gender);
                 FullName[1] = GetRandomHalfOrcSurnameName(); 
                 break;
-            case "Halfling":
+            case "halfling":
                 FullName[0] = GetRandomHalflingFirstName(gender);
                 FullName[1] = GetRandomHalflingSurnameName();
                 break;
-            case "Tiefling":
+            case "tiefling":
                 FullName[0] = GetRandomTieflingFirstName(gender);
                 FullName[1] = GetRandomTieflingSurnameName();
                 break;
-            default: throw new Exception("Invalid arguements passed to GetRandomName method");
+            default: throw new Exception("invalid arguements passed to GetRandomName method");
         }
         return FullName;
     }
     }
-
 }
