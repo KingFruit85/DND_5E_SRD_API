@@ -259,7 +259,7 @@ namespace DND_5E_SRD_API.Models
 
             switch (ClassDetails.Name)
             {
-                default: throw new Exception("invalid characterClass provided");
+                default: throw new Exception($"invalid characterClass provided, class name provided = {ClassDetails.Name}");
                 case "barbarian": HitPoints = 12 + constitutionModifier; break;
                 case "bard": HitPoints = 8 + constitutionModifier; break;
                 case "cleric": HitPoints = 8 + constitutionModifier; break;

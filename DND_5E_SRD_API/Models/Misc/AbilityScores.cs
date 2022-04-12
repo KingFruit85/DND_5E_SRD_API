@@ -494,15 +494,15 @@ namespace DND_5E_SRD_API.Models
 
         public double getAbilityScoreModifier(string score)
         {
-            switch (score)
+            switch (score.ToLower())
             {
                 default: throw new Exception($"A valid ability score string was not provided, provided = {score}");
-                case "str": return getAbilityScoreModifier(scores[score]);
-                case "dex": return getAbilityScoreModifier(scores[score]);
-                case "con": return getAbilityScoreModifier(scores[score]);
-                case "int": return getAbilityScoreModifier(scores[score]);
-                case "wis": return getAbilityScoreModifier(scores[score]);
-                case "cha": return getAbilityScoreModifier(scores[score]);
+                case "str": return getAbilityScoreModifier(scores[score.ToLower()]);
+                case "dex": return getAbilityScoreModifier(scores[score.ToLower()]);
+                case "con": return getAbilityScoreModifier(scores[score.ToLower()]);
+                case "int": return getAbilityScoreModifier(scores[score.ToLower()]);
+                case "wis": return getAbilityScoreModifier(scores[score.ToLower()]);
+                case "cha": return getAbilityScoreModifier(scores[score.ToLower()]);
             }
         }
 

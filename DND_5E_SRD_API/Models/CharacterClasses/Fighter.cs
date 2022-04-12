@@ -8,7 +8,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Fighter()
         {
-            SetName("Fighter");
+            SetName("fighter");
             HitDie = "1d10";
 
             ///////////////////

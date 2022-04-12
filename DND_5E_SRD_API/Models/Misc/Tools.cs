@@ -115,7 +115,7 @@ namespace DND_5E_SRD_API.Models
     {
         try
         {
-            return new Spells().ReturnSpellList().Spells.Where(s => s.Name == spellToReturn).ToList()[0];
+            return new Spells().ReturnSpellList().Spells.Where(s => s.Name.ToLower() == spellToReturn.ToLower()).ToList()[0];
         }
         catch (ArgumentNullException)
         {

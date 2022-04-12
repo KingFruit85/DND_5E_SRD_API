@@ -177,7 +177,7 @@ namespace DND_5E_SRD_API.Models.BackStory
 
         static List<string> races = new List<string>()
         {
-            "Human","Dwarf","Elf","Gnome","Halfling","Dragonborn","HalfElf","HalfOrc","Tiefling"
+            "human","dwarf","elf","gnome","halfling","dragonborn","half-elf","half-orc","tiefling"
         };
 
         public static string GetLifeDetails()

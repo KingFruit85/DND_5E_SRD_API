@@ -361,7 +361,7 @@ namespace DND_5E_SRD_API.Models
                 FullName[0] = GetRandomTieflingFirstName(gender);
                 FullName[1] = GetRandomTieflingSurnameName();
                 break;
-            default: throw new Exception("invalid arguements passed to GetRandomName method");
+            default: throw new Exception($"invalid arguements passed to GetRandomName method, race provided = {race}");
         }
         return FullName;
     }

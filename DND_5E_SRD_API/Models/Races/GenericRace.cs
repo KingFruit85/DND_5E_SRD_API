@@ -405,7 +405,7 @@ namespace DND_5E_SRD_API.Models
     {
         public Dwarf()
         {
-            SetName("Dwarf");
+            SetName("dwarf");
 
             SetRacePerk("ability score increase", "Your Constitution score increases by 2.");
             SetAbilityScoreIncrease("con", 2);
@@ -472,7 +472,7 @@ namespace DND_5E_SRD_API.Models
     {
         public Elf()
         {
-            SetName("Elf");
+            SetName("elf");
 
             SetRacePerk("ability score increase", "ability score increase. Your Dexterity score increases by 2.");
             SetAbilityScoreIncrease("dex", 2);

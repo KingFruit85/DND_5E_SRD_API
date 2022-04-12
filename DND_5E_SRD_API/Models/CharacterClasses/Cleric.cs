@@ -8,7 +8,7 @@ namespace DND_5E_SRD_API.Controllers
     {
         public Cleric()
         {
-            SetName("Cleric");
+            SetName("cleric");
             HitDie = "1d8";
 
             ///////////////////
