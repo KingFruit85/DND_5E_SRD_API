@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DND_5E_SRD_API.Models
 {
@@ -10,12 +8,12 @@ namespace DND_5E_SRD_API.Models
         private int[] RawScores = new Dice().ReturnAbilityScores();
         public Dictionary<string, int> scores { get; set; } = new Dictionary<string, int>()
         {
-            {"STR",0},
-            {"DEX",0},
-            {"CON",0},
-            {"INT",0},
-            {"WIS",0},
-            {"CHA",0},
+            {"str",0},
+            {"dex",0},
+            {"con",0},
+            {"int",0},
+            {"wis",0},
+            {"cha",0},
         };
 
 
@@ -103,23 +101,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"CHA",rawScores[0]},
-                    {"DEX",rawScores[1]},
-                    {"CON",rawScores[2]},
-                    {"WIS",rawScores[3]},
-                    {"STR",rawScores[4]},
-                    {"INT",rawScores[5]},
+                    {"cha",rawScores[0]},
+                    {"dex",rawScores[1]},
+                    {"con",rawScores[2]},
+                    {"wis",rawScores[3]},
+                    {"str",rawScores[4]},
+                    {"int",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["CHA"] = RawScores[0];
-                scores["DEX"] = RawScores[1];
-                scores["CON"] = RawScores[2];
-                scores["WIS"] = RawScores[3];
-                scores["STR"] = RawScores[4];
-                scores["INT"] = RawScores[5];
+                scores["cha"] = RawScores[0];
+                scores["dex"] = RawScores[1];
+                scores["con"] = RawScores[2];
+                scores["wis"] = RawScores[3];
+                scores["str"] = RawScores[4];
+                scores["int"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -130,23 +128,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"STR",rawScores[0]},
-                    {"CON",rawScores[1]},
-                    {"DEX",rawScores[2]},
-                    {"WIS",rawScores[3]},
-                    {"CHA",rawScores[4]},
-                    {"INT",rawScores[5]},
+                    {"str",rawScores[0]},
+                    {"con",rawScores[1]},
+                    {"dex",rawScores[2]},
+                    {"wis",rawScores[3]},
+                    {"cha",rawScores[4]},
+                    {"int",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["STR"] = RawScores[0];
-                scores["CON"] = RawScores[1];
-                scores["DEX"] = RawScores[2];
-                scores["WIS"] = RawScores[3];
-                scores["CHA"] = RawScores[4];
-                scores["INT"] = RawScores[5];
+                scores["str"] = RawScores[0];
+                scores["con"] = RawScores[1];
+                scores["dex"] = RawScores[2];
+                scores["wis"] = RawScores[3];
+                scores["cha"] = RawScores[4];
+                scores["int"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -157,23 +155,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"DEX",rawScores[0]},
-                    {"WIS",rawScores[1]},
-                    {"CON",rawScores[2]},
-                    {"STR",rawScores[3]},
-                    {"CHA",rawScores[4]},
-                    {"INT",rawScores[5]},
+                    {"dex",rawScores[0]},
+                    {"wis",rawScores[1]},
+                    {"con",rawScores[2]},
+                    {"str",rawScores[3]},
+                    {"cha",rawScores[4]},
+                    {"int",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["DEX"] = RawScores[0];
-                scores["WIS"] = RawScores[1];
-                scores["CON"] = RawScores[2];
-                scores["STR"] = RawScores[3];
-                scores["CHA"] = RawScores[4];
-                scores["INT"] = RawScores[5];
+                scores["dex"] = RawScores[0];
+                scores["wis"] = RawScores[1];
+                scores["con"] = RawScores[2];
+                scores["str"] = RawScores[3];
+                scores["cha"] = RawScores[4];
+                scores["int"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -184,23 +182,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"WIS",rawScores[0]},
-                    {"STR",rawScores[1]},
-                    {"CON",rawScores[2]},
-                    {"DEX",rawScores[3]},
-                    {"CHA",rawScores[4]},
-                    {"INT",rawScores[5]},
+                    {"wis",rawScores[0]},
+                    {"str",rawScores[1]},
+                    {"con",rawScores[2]},
+                    {"dex",rawScores[3]},
+                    {"cha",rawScores[4]},
+                    {"int",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["WIS"] = RawScores[0];
-                scores["STR"] = RawScores[1];
-                scores["CON"] = RawScores[2];
-                scores["DEX"] = RawScores[3];
-                scores["CHA"] = RawScores[4];
-                scores["INT"] = RawScores[5];
+                scores["wis"] = RawScores[0];
+                scores["str"] = RawScores[1];
+                scores["con"] = RawScores[2];
+                scores["dex"] = RawScores[3];
+                scores["cha"] = RawScores[4];
+                scores["int"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -212,23 +210,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"WIS",rawScores[0]},
-                    {"DEX",rawScores[1]},
-                    {"CON",rawScores[2]},
-                    {"CHA",rawScores[3]},
-                    {"INT",rawScores[4]},
-                    {"STR",rawScores[5]},
+                    {"wis",rawScores[0]},
+                    {"dex",rawScores[1]},
+                    {"con",rawScores[2]},
+                    {"cha",rawScores[3]},
+                    {"int",rawScores[4]},
+                    {"str",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["WIS"] = RawScores[0];
-                scores["DEX"] = RawScores[1];
-                scores["CON"] = RawScores[2];
-                scores["CHA"] = RawScores[3];
-                scores["INT"] = RawScores[4];
-                scores["STR"] = RawScores[5];
+                scores["wis"] = RawScores[0];
+                scores["dex"] = RawScores[1];
+                scores["con"] = RawScores[2];
+                scores["cha"] = RawScores[3];
+                scores["int"] = RawScores[4];
+                scores["str"] = RawScores[5];
                 return new Dictionary<string, int>();
 
             }
@@ -241,23 +239,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"WIS",rawScores[0]},
-                    {"DEX",rawScores[1]},
-                    {"CON",rawScores[2]},
-                    {"CHA",rawScores[3]},
-                    {"INT",rawScores[4]},
-                    {"STR",rawScores[5]},
+                    {"wis",rawScores[0]},
+                    {"dex",rawScores[1]},
+                    {"con",rawScores[2]},
+                    {"cha",rawScores[3]},
+                    {"int",rawScores[4]},
+                    {"str",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["WIS"] = RawScores[0];
-                scores["DEX"] = RawScores[1];
-                scores["CON"] = RawScores[2];
-                scores["CHA"] = RawScores[3];
-                scores["INT"] = RawScores[4];
-                scores["STR"] = RawScores[5];
+                scores["wis"] = RawScores[0];
+                scores["dex"] = RawScores[1];
+                scores["con"] = RawScores[2];
+                scores["cha"] = RawScores[3];
+                scores["int"] = RawScores[4];
+                scores["str"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -268,23 +266,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"DEX",rawScores[0]},
-                    {"CON",rawScores[1]},
-                    {"WIS",rawScores[2]},
-                    {"STR",rawScores[3]},
-                    {"CHA",rawScores[4]},
-                    {"INT",rawScores[5]},
+                    {"dex",rawScores[0]},
+                    {"con",rawScores[1]},
+                    {"wis",rawScores[2]},
+                    {"str",rawScores[3]},
+                    {"cha",rawScores[4]},
+                    {"int",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["DEX"] = RawScores[0];
-                scores["CON"] = RawScores[1];
-                scores["WIS"] = RawScores[2];
-                scores["STR"] = RawScores[3];
-                scores["CHA"] = RawScores[4];
-                scores["INT"] = RawScores[5];
+                scores["dex"] = RawScores[0];
+                scores["con"] = RawScores[1];
+                scores["wis"] = RawScores[2];
+                scores["str"] = RawScores[3];
+                scores["cha"] = RawScores[4];
+                scores["int"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -295,23 +293,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"DEX",rawScores[0]},
-                    {"CON",rawScores[1]},
-                    {"WIS",rawScores[2]},
-                    {"CHA",rawScores[3]},
-                    {"INT",rawScores[4]},
-                    {"STR",rawScores[5]},
+                    {"dex",rawScores[0]},
+                    {"con",rawScores[1]},
+                    {"wis",rawScores[2]},
+                    {"cha",rawScores[3]},
+                    {"int",rawScores[4]},
+                    {"str",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["DEX"] = RawScores[0];
-                scores["CON"] = RawScores[1];
-                scores["WIS"] = RawScores[2];
-                scores["CHA"] = RawScores[3];
-                scores["INT"] = RawScores[4];
-                scores["STR"] = RawScores[5];
+                scores["dex"] = RawScores[0];
+                scores["con"] = RawScores[1];
+                scores["wis"] = RawScores[2];
+                scores["cha"] = RawScores[3];
+                scores["int"] = RawScores[4];
+                scores["str"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -322,23 +320,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"CHA",rawScores[0]},
-                    {"CON",rawScores[1]},
-                    {"INT",rawScores[2]},
-                    {"WIS",rawScores[3]},
-                    {"DEX",rawScores[4]},
-                    {"STR",rawScores[5]},
+                    {"cha",rawScores[0]},
+                    {"con",rawScores[1]},
+                    {"int",rawScores[2]},
+                    {"wis",rawScores[3]},
+                    {"dex",rawScores[4]},
+                    {"str",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["CHA"] = RawScores[0];
-                scores["CON"] = RawScores[1];
-                scores["INT"] = RawScores[2];
-                scores["WIS"] = RawScores[3];
-                scores["DEX"] = RawScores[4];
-                scores["STR"] = RawScores[5];
+                scores["cha"] = RawScores[0];
+                scores["con"] = RawScores[1];
+                scores["int"] = RawScores[2];
+                scores["wis"] = RawScores[3];
+                scores["dex"] = RawScores[4];
+                scores["str"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -349,23 +347,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"CHA",rawScores[0]},
-                    {"CON",rawScores[1]},
-                    {"DEX",rawScores[2]},
-                    {"WIS",rawScores[3]},
-                    {"INT",rawScores[4]},
-                    {"STR",rawScores[5]},
+                    {"cha",rawScores[0]},
+                    {"con",rawScores[1]},
+                    {"dex",rawScores[2]},
+                    {"wis",rawScores[3]},
+                    {"int",rawScores[4]},
+                    {"str",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["CHA"] = RawScores[0];
-                scores["CON"] = RawScores[1];
-                scores["DEX"] = RawScores[2];
-                scores["WIS"] = RawScores[3];
-                scores["INT"] = RawScores[4];
-                scores["STR"] = RawScores[5];
+                scores["cha"] = RawScores[0];
+                scores["con"] = RawScores[1];
+                scores["dex"] = RawScores[2];
+                scores["wis"] = RawScores[3];
+                scores["int"] = RawScores[4];
+                scores["str"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -376,23 +374,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"INT",rawScores[0]},
-                    {"CON",rawScores[1]},
-                    {"DEX",rawScores[2]},
-                    {"WIS",rawScores[3]},
-                    {"CHA",rawScores[4]},
-                    {"STR",rawScores[5]},
+                    {"int",rawScores[0]},
+                    {"con",rawScores[1]},
+                    {"dex",rawScores[2]},
+                    {"wis",rawScores[3]},
+                    {"cha",rawScores[4]},
+                    {"str",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["INT"] = RawScores[0];
-                scores["CON"] = RawScores[1];
-                scores["DEX"] = RawScores[2];
-                scores["WIS"] = RawScores[3];
-                scores["CHA"] = RawScores[4];
-                scores["STR"] = RawScores[5];
+                scores["int"] = RawScores[0];
+                scores["con"] = RawScores[1];
+                scores["dex"] = RawScores[2];
+                scores["wis"] = RawScores[3];
+                scores["cha"] = RawScores[4];
+                scores["str"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -403,23 +401,23 @@ namespace DND_5E_SRD_API.Models
             {
                 Dictionary<string, int> _scores = new Dictionary<string, int>()
                 {
-                    {"STR",rawScores[0]},
-                    {"CON",rawScores[1]},
-                    {"DEX",rawScores[2]},
-                    {"WIS",rawScores[3]},
-                    {"CHA",rawScores[4]},
-                    {"INT",rawScores[5]},
+                    {"str",rawScores[0]},
+                    {"con",rawScores[1]},
+                    {"dex",rawScores[2]},
+                    {"wis",rawScores[3]},
+                    {"cha",rawScores[4]},
+                    {"int",rawScores[5]},
                 };
                 return _scores;
             }
             else
             {
-                scores["STR"] = RawScores[0];
-                scores["CON"] = RawScores[1];
-                scores["DEX"] = RawScores[2];
-                scores["WIS"] = RawScores[3];
-                scores["CHA"] = RawScores[4];
-                scores["INT"] = RawScores[5];
+                scores["str"] = RawScores[0];
+                scores["con"] = RawScores[1];
+                scores["dex"] = RawScores[2];
+                scores["wis"] = RawScores[3];
+                scores["cha"] = RawScores[4];
+                scores["int"] = RawScores[5];
                 return new Dictionary<string, int>();
             }
         }
@@ -431,62 +429,62 @@ namespace DND_5E_SRD_API.Models
 
         public void SetStrengthScore(int score)
         {
-            scores["STR"] = score;
+            scores["str"] = score;
         }
 
         public int GetStrengthScore()
         {
-            return scores["STR"];
+            return scores["str"];
         }
 
         public void SetDexterityScore(int score)
         {
-            scores["DEX"] = score;
+            scores["dex"] = score;
         }
 
         public int GetDexterityScore()
         {
-            return scores["DEX"];
+            return scores["dex"];
         }
 
         public void SetConstitutionScore(int score)
         {
-            scores["CON"] = score;
+            scores["con"] = score;
         }
 
         public int GetConstitutionScore()
         {
-            return scores["CON"];
+            return scores["con"];
         }
 
         public void SetIntelligenceScore(int score)
         {
-            scores["INT"] = score;
+            scores["int"] = score;
         }
 
         public int GetIntelligenceScore()
         {
-            return scores["INT"];
+            return scores["int"];
         }
 
         public void SetWisdomScore(int score)
         {
-            scores["WIS"] = score;
+            scores["wis"] = score;
         }
 
         public int GetWisdomScore()
         {
-            return scores["WIS"];
+            return scores["wis"];
         }
 
         public void SetCharismaScore(int score)
         {
-            scores["CHA"] = score;
+            scores["cha"] = score;
         }
 
         public int GetCharismaScore()
         {
-            return scores["CHA"];
+            return scores["cha"];
         }
 
         public double getAbilityScoreModifier(int score)
@@ -499,12 +497,12 @@ namespace DND_5E_SRD_API.Models
             switch (score)
             {
                 default: throw new Exception("A valid ability score string was not provided");
-                case "STR": return getAbilityScoreModifier(scores[score]);
-                case "DEX": return getAbilityScoreModifier(scores[score]);
-                case "CON": return getAbilityScoreModifier(scores[score]);
-                case "INT": return getAbilityScoreModifier(scores[score]);
-                case "WIS": return getAbilityScoreModifier(scores[score]);
-                case "CHA": return getAbilityScoreModifier(scores[score]);
+                case "str": return getAbilityScoreModifier(scores[score]);
+                case "dex": return getAbilityScoreModifier(scores[score]);
+                case "con": return getAbilityScoreModifier(scores[score]);
+                case "int": return getAbilityScoreModifier(scores[score]);
+                case "wis": return getAbilityScoreModifier(scores[score]);
+                case "cha": return getAbilityScoreModifier(scores[score]);
             }
         }
 
@@ -512,23 +510,23 @@ namespace DND_5E_SRD_API.Models
         {
             switch (stat)
             {
-                case "STR":
-                    scores["STR"] += score;
+                case "str":
+                    scores["str"] += score;
                     break;
-                case "DEX":
-                    scores["DEX"] += score;
+                case "dex":
+                    scores["dex"] += score;
                     break;
-                case "CON":
-                    scores["CON"] += score;
+                case "con":
+                    scores["con"] += score;
                     break;
-                case "WIS":
-                    scores["WIS"] += score;
+                case "wis":
+                    scores["wis"] += score;
                     break;
-                case "INT":
-                    scores["INT"] += score;
+                case "int":
+                    scores["int"] += score;
                     break;
-                case "CHA":
-                    scores["CHA"] += score;
+                case "cha":
+                    scores["cha"] += score;
                     break;
 
                 default: throw new Exception("Unable to increment ability score");
