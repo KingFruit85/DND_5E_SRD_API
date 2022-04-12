@@ -496,7 +496,7 @@ namespace DND_5E_SRD_API.Models
         {
             switch (score)
             {
-                default: throw new Exception("A valid ability score string was not provided");
+                default: throw new Exception($"A valid ability score string was not provided, provided = {score}");
                 case "str": return getAbilityScoreModifier(scores[score]);
                 case "dex": return getAbilityScoreModifier(scores[score]);
                 case "con": return getAbilityScoreModifier(scores[score]);
