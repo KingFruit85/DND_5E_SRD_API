@@ -531,7 +531,6 @@ namespace DND_5E_SRD_API.Models
 
                 default: throw new Exception("Unable to increment ability score");
             }
-
         }
     }
 }
