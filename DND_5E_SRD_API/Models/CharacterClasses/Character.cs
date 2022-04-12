@@ -1,8 +1,6 @@
 ﻿using DND_5E_SRD_API.Controllers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DND_5E_SRD_API.Models
 {
@@ -52,9 +50,9 @@ namespace DND_5E_SRD_API.Models
         {
             int i = new Random().Next(1, 100);
 
-            if (i >= 1 && i <= 39) return "Male";
-            if (i >= 40 && i <= 79) return "Female";
-            else return "Non-Binary";
+            if (i >= 1 && i <= 39) return "male";
+            if (i >= 40 && i <= 79) return "female";
+            else return "non-binary";
         }
 
         public GenericRace SetRandomRace()
@@ -96,9 +94,9 @@ namespace DND_5E_SRD_API.Models
             {
                 foreach (var skill in skills)
                 {
-                    if (!ClassDetails.Proficiencies["Skills"].Contains(skill))
+                    if (!ClassDetails.Proficiencies["skills"].Contains(skill))
                     {
-                        ClassDetails.Proficiencies["Skills"].Add(skill);
+                        ClassDetails.Proficiencies["skills"].Add(skill);
                     }
                 }
             }
@@ -107,9 +105,9 @@ namespace DND_5E_SRD_API.Models
             {
                 foreach (var weapon in weapons)
                 {
-                    if (!ClassDetails.Proficiencies["Weapons"].Contains(weapon))
+                    if (!ClassDetails.Proficiencies["weapons"].Contains(weapon))
                     {
-                        ClassDetails.Proficiencies["Weapons"].Add(weapon);
+                        ClassDetails.Proficiencies["weapons"].Add(weapon);
                     }
                 }
             }
@@ -118,9 +116,9 @@ namespace DND_5E_SRD_API.Models
             {
                 foreach (var armor in armors)
                 {
-                    if (!ClassDetails.Proficiencies["Armor"].Contains(armor))
+                    if (!ClassDetails.Proficiencies["armor"].Contains(armor))
                     {
-                        ClassDetails.Proficiencies["Weapons"].Add(armor);
+                        ClassDetails.Proficiencies["weapons"].Add(armor);
                     }
                 }
             }
@@ -129,9 +127,9 @@ namespace DND_5E_SRD_API.Models
             {
                 foreach (var armor in armors)
                 {
-                    if (!ClassDetails.Proficiencies["Armor"].Contains(armor))
+                    if (!ClassDetails.Proficiencies["armor"].Contains(armor))
                     {
-                        ClassDetails.Proficiencies["Weapons"].Add(armor);
+                        ClassDetails.Proficiencies["weapons"].Add(armor);
                     }
                 }
             }
@@ -198,7 +196,7 @@ namespace DND_5E_SRD_API.Models
             skillAndMods["persuasion"] = Charisma;
 
             // Add prof bonus 
-            var profBonuses = ClassDetails.GetProficiencies()["Skills"];
+            var profBonuses = ClassDetails.GetProficiencies()["skills"];
 
             foreach (var skill in profBonuses)
             {
@@ -212,16 +210,16 @@ namespace DND_5E_SRD_API.Models
 
             // SAVING THROWS
 
-            var savingThrowProfs = ClassDetails.GetProficiencies()["Saving Throws"];
+            var savingThrowProfs = ClassDetails.GetProficiencies()["saving throws"];
 
             var savingThrows = new Dictionary<string, int>()
             {
-                {"Strength",Strength},
-                {"Dexterity",Dexterity},
-                {"Constitution",Constitution},
-                {"Intelligence",Intelligence},
-                {"Wisdom",Wisdom},
-                {"Charisma",Charisma}
+                {"strength",Strength},
+                {"dexterity",Dexterity},
+                {"constitution",Constitution},
+                {"intelligence",Intelligence},
+                {"wisdom",Wisdom},
+                {"charisma",Charisma}
             };
 
             foreach (var savingThrow in savingThrowProfs)
@@ -240,17 +238,17 @@ namespace DND_5E_SRD_API.Models
             switch (characterClass)
             {
                 default: throw new Exception("Unknown Character Class provided as argument");
-                case "Bard": return new Bard();
+                case "bard": return new Bard();
                 case "Barbarian": return new Barbarian();
-                case "Cleric": return new Cleric(); 
-                case "Fighter": return new Fighter(); 
-                case "Monk": return new Monk(); 
-                case "Paladin": return new Paladin(); 
-                case "Ranger": return new Ranger(); 
-                case "Rogue": return new Rogue(); 
-                case "Sorcerer": return new Sorcerer(); 
-                case "Warlock": return new Warlock(); 
-                case "Wizard": return new Wizard(); 
+                case "cleric": return new Cleric(); 
+                case "fighter": return new Fighter(); 
+                case "monk": return new Monk(); 
+                case "paladin": return new Paladin(); 
+                case "ranger": return new Ranger(); 
+                case "rogue": return new Rogue(); 
+                case "sorcerer": return new Sorcerer(); 
+                case "warlock": return new Warlock(); 
+                case "wizard": return new Wizard(); 
                 case "Druid": return new Druid(); 
             }
         }
@@ -263,27 +261,27 @@ namespace DND_5E_SRD_API.Models
             {
                 default: throw new Exception("invalid characterClass provided");
                 case "Barbarian": HitPoints = 12 + constitutionModifier; break;
-                case "Bard": HitPoints = 8 + constitutionModifier; break;
-                case "Cleric": HitPoints = 8 + constitutionModifier; break;
+                case "bard": HitPoints = 8 + constitutionModifier; break;
+                case "cleric": HitPoints = 8 + constitutionModifier; break;
                 case "Druid": HitPoints = 8 + constitutionModifier; break;
-                case "Fighter": HitPoints = 10 + constitutionModifier; break;
-                case "Monk": HitPoints = 8 + constitutionModifier; break;
-                case "Paladin": HitPoints = 10 + constitutionModifier; break;
-                case "Ranger": HitPoints = 10 + constitutionModifier; break;
-                case "Rogue": HitPoints = 8 + constitutionModifier; break;
-                case "Sorcerer": HitPoints = 6 + constitutionModifier; break;
-                case "Warlock": HitPoints = 8 + constitutionModifier; break;
-                case "Wizard": HitPoints = 6 + constitutionModifier; break;
+                case "fighter": HitPoints = 10 + constitutionModifier; break;
+                case "monk": HitPoints = 8 + constitutionModifier; break;
+                case "paladin": HitPoints = 10 + constitutionModifier; break;
+                case "ranger": HitPoints = 10 + constitutionModifier; break;
+                case "rogue": HitPoints = 8 + constitutionModifier; break;
+                case "sorcerer": HitPoints = 6 + constitutionModifier; break;
+                case "warlock": HitPoints = 8 + constitutionModifier; break;
+                case "wizard": HitPoints = 6 + constitutionModifier; break;
             }
 
             // The Hill Dwarf subrace hit point maximum increases by 1
-            if (this.RaceDetails.SubRace == "Hill Dwarf")
+            if (this.RaceDetails.SubRace == "hill dwarf")
             {
                 HitPoints += 1;
             }
 
             // Sorcerer Draconic Ancestry
-            if (this.ClassDetails.SorcerousOrigin == "Draconic")
+            if (this.ClassDetails.SorcerousOrigin == "draconic")
             {
                 HitPoints += 1;
             }
@@ -295,11 +293,11 @@ namespace DND_5E_SRD_API.Models
             int armorClassValue = ClassDetails.Armor.BaseArmorClass;
 
             // Check from barbarian/Unarmored Defense
-            var isBarbarian = (this.ClassDetails.Name == "Barbarian") ? true : false;
-            var isFighter = (this.ClassDetails.Name == "Fighter") ? true : false;
-            var isMonk = (this.ClassDetails.Name == "Monk") ? true : false;
-            var isSorcerer = (this.ClassDetails.Name == "Sorcerer") ? true : false;
-            var isWizard = (this.ClassDetails.Name == "Wizard") ? true : false;
+            var isBarbarian = (this.ClassDetails.Name == "barbarian") ? true : false;
+            var isFighter = (this.ClassDetails.Name == "fighter") ? true : false;
+            var isMonk = (this.ClassDetails.Name == "monk") ? true : false;
+            var isSorcerer = (this.ClassDetails.Name == "sorcerer") ? true : false;
+            var isWizard = (this.ClassDetails.Name == "wizard") ? true : false;
 
             // This will need to be expanded to take into account the type of shield held at a future date
             var isHoldingShield = (this.ClassDetails.Shield != null);
@@ -308,8 +306,8 @@ namespace DND_5E_SRD_API.Models
             {
                 // TODO: This should check for armor
                 ArmorClass = 10
-                + (int)AbilityScores.getAbilityScoreModifier("DEX")
-                + (int)AbilityScores.getAbilityScoreModifier("CON");
+                + (int)AbilityScores.getAbilityScoreModifier("dex")
+                + (int)AbilityScores.getAbilityScoreModifier("con");
                 return;
             }
 
@@ -328,8 +326,8 @@ namespace DND_5E_SRD_API.Models
                 if (this.ClassDetails.Armor.Name == null)
                 {
                     ArmorClass = 10
-                    + (int)AbilityScores.getAbilityScoreModifier("DEX")
-                    + (int)AbilityScores.getAbilityScoreModifier("WIS");
+                    + (int)AbilityScores.getAbilityScoreModifier("dex")
+                    + (int)AbilityScores.getAbilityScoreModifier("wis");
                     return;
                 }
             }
@@ -341,7 +339,7 @@ namespace DND_5E_SRD_API.Models
                 if (this.ClassDetails.Armor.Name == null)
                 {
                     ArmorClass = 13
-                    + (int)AbilityScores.getAbilityScoreModifier("DEX");
+                    + (int)AbilityScores.getAbilityScoreModifier("dex");
                     return;
                 }
             }
@@ -352,7 +350,7 @@ namespace DND_5E_SRD_API.Models
                 if (this.ClassDetails.Armor.Name == null)
                 {
                     ArmorClass = 10
-                    + (int)AbilityScores.getAbilityScoreModifier("DEX");
+                    + (int)AbilityScores.getAbilityScoreModifier("dex");
                     return;
                 }
             }
@@ -373,7 +371,7 @@ namespace DND_5E_SRD_API.Models
 
         public void CalculateInitiative()
         {
-            Initiative = (int)AbilityScores.getAbilityScoreModifier("DEX");
+            Initiative = (int)AbilityScores.getAbilityScoreModifier("dex");
         }
 
 
@@ -401,7 +399,7 @@ namespace DND_5E_SRD_API.Models
         {
             Gender = SetRandomGender();
             RaceDetails = SetRandomRace();
-            CharacterClass = specificClass;
+            CharacterClass = specificClass.ToLower().Trim();
             FirstName = GetRandomFirstName(Gender, RaceDetails.Name);
             LastName = GetRandomLastName(Gender, RaceDetails.Name);
             AbilityScores = new AbilityScores();
