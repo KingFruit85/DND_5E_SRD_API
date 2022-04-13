@@ -15,7 +15,7 @@ namespace DND_5E_SRD_API.Models
     
     // -- Dragonborn
     private string[] FemaleDragonbornNames = {"Kathyra", "Aririth", "Welsidalynn"};
-    private string[] MaleDragonbornNames = {"Narvull", "Urobroth", "Qelziros"};
+    private string[] MaleDragonbornNames = {"Mjow", "Narvull", "Urobroth", "Qelziros"};
     private string[] DragonbornSurnames = {"Clenxec", "Aldexish", "Criracnellas"};
 
     public string GetRandomDragonbornFirstName(string gender)
@@ -48,7 +48,7 @@ namespace DND_5E_SRD_API.Models
     }
 
     // -- Human
-    private string[] MaleHumanNames = {"Christopher", "Aaron", "Noah", "David", "Jeremiah"};
+    private string[] MaleHumanNames = {"Rich","Christopher", "Aaron", "Noah", "David", "Jeremiah"};
     private string[] FemaleHumanNames = {"Kelly", "Magda", "Sophia", "Persephone"};
     private string[] HumanSurnames = {"Long", "Araniseli", "Smith", "Jones", "Peters", "Shipp"};
 

@@ -392,7 +392,7 @@ namespace DND_5E_SRD_API.Models
             SetLevel1HitPoints();
             CalculateArmorClass();
             CalculateInitiative();
-            BackStoryDetails = BackStory.BackStory.GetBackstory();
+            BackStoryDetails = BackStory.BackStory.GetBackstory(this);
         }
 
         public Character(string specificClass)
@@ -412,7 +412,7 @@ namespace DND_5E_SRD_API.Models
             SetLevel1HitPoints();
             CalculateArmorClass();
             CalculateInitiative();
-            BackStoryDetails = BackStory.BackStory.GetBackstory();
+            BackStoryDetails = BackStory.BackStory.GetBackstory(this);
         }
     }
 }

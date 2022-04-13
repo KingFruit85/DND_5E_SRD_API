@@ -41,7 +41,7 @@ namespace DND_5E_SRD_API.Controllers
             Proficiencies["skills"].Add(clericSkillProfs[1]);
 
             // SRD Clerics can only be life domain, they are proficient in heavy armor
-            Proficiencies["Armor"].Add("Heavy Armor");
+            Proficiencies["armor"].Add("Heavy Armor");
 
             SetProficiencies(Proficiencies);
 

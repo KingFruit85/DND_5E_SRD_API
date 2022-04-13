@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace DND_5E_SRD_API.Models.BackStory
@@ -34,7 +35,7 @@ namespace DND_5E_SRD_API.Models.BackStory
             "Bat"
         };
 
-        static List<string> mentalState = new List<string>() 
+        static List<string> mentalState = new List<string>()
         {
             "Mad",
             "Sane",
@@ -183,7 +184,7 @@ namespace DND_5E_SRD_API.Models.BackStory
         public static string GetLifeDetails()
         {
             Random r = new Random();
-            switch (r.Next(1,24))
+            switch (r.Next(1, 24))
             {
                 case 1: return $"You were abandoned at birth by your parents and fended for youself on the streets";
                 case 2: return $"You were raised in a now disgraced noble family and are trying to reclaim your previous status";
@@ -200,14 +201,14 @@ namespace DND_5E_SRD_API.Models.BackStory
                 case 13: return $"Your life has been a cruel collection of practical jokes made at your expense. You finally snapped one day and do not speak about what happened to anyone";
                 case 14: return $"Your best friend growing up convinced you that the world had a solid gold core. You are always hatching schemes to claim the gold core for your own";
                 case 15: return $"You grew up in a farming village where you tended {Tools.GetRandomListElement(animals)}s and {Tools.GetRandomListElement(animals)}s";
-                case 16: return $"You didn't see the light of day until you were {r.Next(5,15)} years old";
+                case 16: return $"You didn't see the light of day until you were {r.Next(5, 15)} years old";
                 case 17: return $"You were raised in a perfectly stable family that was wiped out by  {Tools.GetRandomListElement(mentalState)} {Tools.GetRandomListElement(animals)}s";
                 case 18: return $"You were dropped on your head as a child, ever since then you believe you can speak to {Tools.GetRandomListElement(animals)}s. You can't.";
                 case 19: return $"You were abandoned at birth and grew up in a scary forest cared for by {Tools.GetRandomListElement(animals)}s";
                 case 20: return $"You were raised in a {Tools.GetRandomListElement(buildings)} where you became addicted to {Tools.GetRandomListElement(state)} {Tools.GetRandomListElement(food)}";
                 case 21: return $"You grew up in a {Tools.GetRandomListElement(buildings)}, and your only friend was a {Tools.GetRandomListElement(mentalState)} {Tools.GetRandomListElement(animals)}";
                 case 22: return $"You were sold into slavery at a young age. You grew up in the slave pits, fighting for the amusement of others. During your final fight you blacked out after receiving a mortal wound and woke up fully healed in a {Tools.GetRandomListElement(buildings)}";
-                case 23: return $"You took a vow of non-silence when you were {r.Next(1,15)} years old and are constantly making some sort of noise";
+                case 23: return $"You took a vow of non-silence when you were {r.Next(1, 15)} years old and are constantly making some sort of noise";
                 default: return "";
             }
         }
@@ -321,13 +322,58 @@ namespace DND_5E_SRD_API.Models.BackStory
             }
         }
 
-        public static Dictionary<string,string> GetBackstory()
+        public static string GetPhysicalDescription(Character c)
         {
+            StringBuilder sb = new StringBuilder("");
+            sb.Append($"your physique is {GetStrengthDescription(c.AbilityScores.scores["str"])} ");
+            sb.Append($"your movement is {GetDexterityDescription(c.AbilityScores.scores["dex"])} ");
+
+
+            return sb.ToString();
+        }
+
+        static List<string> weakStrengthDescriptors = new List<string>  {"weak", "feeble", "slight", "fragile", "frail", "wasted", "spindly"};
+        static List<string> averageStrengthDescriptors = new List<string>  {"average", "mediocre", "ordinary", "regular", "middling", "unexceptional"};
+        static List<string> strongStrengthDescriptors = new List<string>  {"strong", "able", "athletic", "forceful", "solid", "vigorous", "mighty"};
+        static List<string> apexStrengthDescriptors = new List<string>  { "jacked to the tits", "absurd", "unbelievable", "unimaginable", "godlike", "preposterous", "mindblowing"};
+
+        public static string GetStrengthDescription(int str)
+        {
+
+            if (str <= 10)             return Tools.GetRandomListElement(weakStrengthDescriptors);
+            if (str >= 10 && str < 16) return Tools.GetRandomListElement(averageStrengthDescriptors);
+            if (str >= 16 && str < 19) return Tools.GetRandomListElement(strongStrengthDescriptors);
+            if (str >= 19)             return Tools.GetRandomListElement(apexStrengthDescriptors);
+
+            return "-_-";
+        }
+
+        static List<string> weakDexterityDescriptors = new List<string> { "lethargic", "sluggish", "stagnant", "idle", "dawdling", "plodding", "drowsy" };
+        static List<string> averageDexterityDescriptors = new List<string> { "regular", "plain", "casual", "regular", "so-so", "common" };
+        static List<string> strongDexterityDescriptors = new List<string> { "active", "energetic", "powerful", "fast", "alert", "busy", "lively" };
+        static List<string> apexDexterityDescriptors = new List<string> { "like quicksilver", "rapid", "like a  blur", "breakneck", "hard to keep up with" };
+
+        public static string GetDexterityDescription(int str)
+        {
+
+            if (str <= 10) return Tools.GetRandomListElement(weakDexterityDescriptors);
+            if (str >= 10 && str < 16) return Tools.GetRandomListElement(averageDexterityDescriptors);
+            if (str >= 16 && str < 19) return Tools.GetRandomListElement(strongDexterityDescriptors);
+            if (str >= 19) return Tools.GetRandomListElement(apexDexterityDescriptors);
+
+            return "-_-";
+        }
+
+        public static Dictionary<string,string> GetBackstory(Character c)
+        {
+            int str = c.AbilityScores.scores["str"];
+
             Dictionary<string, string> _backstory = new Dictionary<string, string>();
             _backstory.Add("Life", GetLifeDetails());
             _backstory.Add("Likes", GetLikesDetails());
             _backstory.Add("Dislikes", GetDislikesDetails());
             _backstory.Add("Quirks", GetQuirkDetails());
+            _backstory.Add("Physical Description", GetPhysicalDescription(c));
             return _backstory;
         }
 
