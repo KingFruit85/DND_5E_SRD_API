@@ -36,7 +36,7 @@ public class Spells
 
     public SpellList ReturnSpellList()
     {
-        var spells = File.ReadAllText(@"E:\Coding projects\dnd\data\Spells\Spells.json");
+        var spells = File.ReadAllText(@"Models/Spells/Spells.json");
         return JsonConvert.DeserializeObject<SpellList>(spells);
     }
     

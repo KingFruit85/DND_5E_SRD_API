@@ -41,30 +41,30 @@ namespace DND_5E_SRD_API.Models
     {
         public ArmorList ReturnArmorList()
         {
-            var armor = File.ReadAllText(@"E:\Coding projects\dnd\data\Armor\armor.json");
+            var armor = File.ReadAllText(@"Models/Armor/armor.json");
             return JsonConvert.DeserializeObject<ArmorList>(armor);
         }
 
         public WeaponList ReturnWeaponList()
         {
-            var weapons = File.ReadAllText(@"E:\Coding projects\dnd\data\Weapons\Weapons.json");
+            var weapons = File.ReadAllText(@"Models/Weapons/Weapons.json");
             return JsonConvert.DeserializeObject<WeaponList>(weapons);
         }
 
         public ArtisansToolList ReturnArtisansToolList()
         {
-            var tools = File.ReadAllText(@"E:\Coding projects\dnd\data\Equipment\Misc\ArtisansTools.json");
+            var tools = File.ReadAllText(@"Models/Equipment/Misc/ArtisansTools.json");
             return JsonConvert.DeserializeObject<ArtisansToolList>(tools);
         }
         public MusicalInstrumentList MusicalInstrument()
         {
-            var instruments = File.ReadAllText(@"E:\Coding projects\dnd\data\Equipment\MusicalInstruments\MusicalInstruments.json");
+            var instruments = File.ReadAllText(@"Models/Equipment/MusicalInstruments/MusicalInstruments.json");
             return JsonConvert.DeserializeObject<MusicalInstrumentList>(instruments);
         }
 
         public EquipmentPackList EquipmentPacks()
         {
-            var packs = File.ReadAllText(@"E:\Coding projects\dnd\data\Equipment\Packs\Packs.json");
+            var packs = File.ReadAllText(@"Models/Equipment/Packs/Packs.json");
             return JsonConvert.DeserializeObject<EquipmentPackList>(packs);
         }
 

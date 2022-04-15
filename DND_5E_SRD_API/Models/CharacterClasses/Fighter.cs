@@ -83,10 +83,10 @@ namespace DND_5E_SRD_API.Controllers
                     var OHMartialWeapons = martialWeapons.Where(w => w.Twohanded == false).ToList();
                     OHMartialWeapons = Tools.ShuffleList(OHMartialWeapons);
 
-                    var index = Tools.GetRandomNumberInRange(0,OHMartialWeapons.Count);
+                    var index = Tools.GetRandomNumberInRange(0,OHMartialWeapons.Count - 1);
                     PrimaryWeapon = OHMartialWeapons[index];
 
-                    index = Tools.GetRandomNumberInRange(0,OHMartialWeapons.Count);
+                    index = Tools.GetRandomNumberInRange(0,OHMartialWeapons.Count - 1);
                     OffHandWeapon = OHMartialWeapons[index];
                     
                     break;

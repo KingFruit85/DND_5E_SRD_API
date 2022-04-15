@@ -622,7 +622,7 @@ namespace DND_5E_SRD_API.Models
             for (var i = 0; i <= 1; i++)
             {
                 // Grabs an ability score at a random index
-                index = new Random().Next(0,remainingAbilities.Count);
+                index = new Random().Next(0,remainingAbilities.Count - 1);
                 // Notes the increase
                 SetAbilityScoreIncrease(remainingAbilities[index],1);
                 // Removes previously picked ability score from list

@@ -102,8 +102,7 @@ namespace DND_5E_SRD_API.Models
 
         // Pick a spell from the provided list and return it
         Random r = new Random();
-        var spellListLength = spellList.Count;
-        var randomIndex = r.Next(0,spellList.Count);
+        var randomIndex = r.Next(0,spellList.Count - 1);
         string randomSpell = spellList[r.Next(0,spellList.Count)].Trim(); 
         Spells pickedSpell = AllSpells.Spells.Where(s => s.Name == randomSpell).ToList()[0];
         
