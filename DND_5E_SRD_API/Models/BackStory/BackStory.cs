@@ -1084,58 +1084,56 @@ namespace DND_5E_SRD_API.Models.BackStory
             }
         }
 
-        public static Dictionary<string,string> GetBackstory(Character c)
+        public static string GetParents(Character c)
         {
+            List<parent> parents = new List<parent>();
+            string parentDetails = string.Empty;
 
-            // Get parent details
-            string parentDetails  = string.Empty;
-            string parentalStatus = string.Empty;
-            parent parent1;
-            parent parent2;
-
-
-
-            switch (Tools.GetRandomNumberInRange(0,5))
+            switch (Tools.GetRandomNumberInRange(0, 5))
             {
-                case 0: parentalStatus = "orphan";
-                        parentDetails = "You grew up never knowing either of your parents";
-                        break;
-                case 1: parentalStatus = "single father";
-                        parent1 = new parent(c.GetRandomFirstName("male", c.RaceDetails.Name),Tools.GetRandomListElement(professions));
-                        parentDetails = $"You were raised by your father {parent1.firstName} {c.LastName} who is a {parent1.occupation}";
-                        break;
-                case 2: parentalStatus = "single mother";
-                        parent1 = new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions));
-                        parentDetails = $"You were raised by your mother {parent1.firstName} {c.LastName} who is a {parent1.occupation}";
-                        break;
-                case 3: parentalStatus = "father & mother";
-                        parent1 = new parent(c.GetRandomFirstName("male", c.RaceDetails.Name), Tools.GetRandomListElement(professions));
-                        parent2 = new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions));
-                        parentDetails = $"You were raised by your father {parent1.firstName} {c.LastName} who is a {parent1.occupation}";
-                        parentDetails += $" and your mother {parent2.firstName} {c.LastName} who is a {parent2.occupation}";
-                        break;
-                case 4: parentalStatus = "two mothers";
-                        parent1 = new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions));
-                        parent2 = new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions));
-                        parentDetails = $"You were raised by your mothers {parent1.firstName} {c.LastName} who is a {parent1.occupation}";
-                        parentDetails += $" and {parent2.firstName} {c.LastName} who is a {parent1.occupation}";
-                        break;
-                case 5: parentalStatus = "two fathers";
-                        parent1 = new parent(c.GetRandomFirstName("male", c.RaceDetails.Name), Tools.GetRandomListElement(professions));
-                        parent2 = new parent(c.GetRandomFirstName("male", c.RaceDetails.Name), Tools.GetRandomListElement(professions));
-                        parentDetails = $"You were raised by your fathers {parent1.firstName} {c.LastName} who is a {parent1.occupation}";
-                        parentDetails += $" and {parent2.firstName} {c.LastName} who is a {parent1.occupation}";
-                        break;
+                case 0:
+                    parentDetails = "You grew up never knowing either of your parents";
+                    break;
+                case 1:
+                    parents.Add(new parent(c.GetRandomFirstName("male", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parentDetails = $"You were raised by your father {parents[0].firstName} {c.LastName} who is a {parents[0].occupation}";
+                    break;
+                case 2:
+                    parents.Add(new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parentDetails = $"You were raised by your mother {parents[0].firstName} {c.LastName} who is a {parents[0].occupation}";
+                    break;
+                case 3:
+                    parents.Add(new parent(c.GetRandomFirstName("male", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parents.Add(new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parentDetails = $"You were raised by your father {parents[0].firstName} {c.LastName} who is a {parents[0].occupation}";
+                    parentDetails += $" and your mother {parents[1].firstName} {c.LastName} who is a {parents[1].occupation}";
+                    break;
+                case 4:
+                    parents.Add(new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parents.Add(new parent(c.GetRandomFirstName("female", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parentDetails = $"You were raised by your mothers {parents[0].firstName} {c.LastName} who is a {parents[0].occupation}";
+                    parentDetails += $" and {parents[1].firstName} {c.LastName} who is a {parents[1].occupation}";
+                    break;
+                case 5:
+                    parents.Add(new parent(c.GetRandomFirstName("male", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parents.Add(new parent(c.GetRandomFirstName("male", c.RaceDetails.Name), Tools.GetRandomListElement(professions)));
+                    parentDetails = $"You were raised by your fathers {parents[0].firstName} {c.LastName} who is a {parents[0].occupation}";
+                    parentDetails += $" and {parents[1].firstName} {c.LastName} who is a {parents[1].occupation}";
+                    break;
             }
 
+            return parentDetails;
+        }
 
+        public static Dictionary<string,string> GetBackstory(Character c)
+        {
             Dictionary<string, string> _backstory = new Dictionary<string, string>();
             _backstory.Add("Life", GetLifeDetails());
             _backstory.Add("Likes", GetLikesDetails());
             _backstory.Add("Dislikes", GetDislikesDetails());
             _backstory.Add("Quirks", GetQuirkDetails());
             _backstory.Add("Physical Description", GetPhysicalDescription(c));
-            _backstory.Add("ParentDetails", parentDetails);
+            _backstory.Add("ParentDetails", GetParents(c));
             return _backstory;
         }
 
