@@ -1137,5 +1137,19 @@ namespace DND_5E_SRD_API.Models.BackStory
             return _backstory;
         }
 
+        public static Dictionary<string, string> GetRandomBackstory()
+        {
+            Character c = new Character();
+
+            Dictionary<string, string> _backstory = new Dictionary<string, string>();
+            _backstory.Add("Life", GetLifeDetails());
+            _backstory.Add("Likes", GetLikesDetails());
+            _backstory.Add("Dislikes", GetDislikesDetails());
+            _backstory.Add("Quirks", GetQuirkDetails());
+            _backstory.Add("Physical Description", GetPhysicalDescription(c));
+            _backstory.Add("ParentDetails", GetParents(c));
+            return _backstory;
+        }
+
     }
 }

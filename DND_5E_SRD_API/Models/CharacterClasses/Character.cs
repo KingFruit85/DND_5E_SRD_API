@@ -232,7 +232,6 @@ namespace DND_5E_SRD_API.Models
             SavingThrows = savingThrows;
         }
 
-
         public GenericCharacterClass GetSpecificCharacterClass(string characterClass)
         {
             switch (characterClass)
@@ -369,9 +368,9 @@ namespace DND_5E_SRD_API.Models
             ArmorClass = armorClassValue;
         }
 
-        public void CalculateInitiative()
+        public int CalculateInitiative()
         {
-            Initiative = (int)AbilityScores.getAbilityScoreModifier("dex");
+            return (int)AbilityScores.getAbilityScoreModifier("dex");
         }
 
 
@@ -391,8 +390,8 @@ namespace DND_5E_SRD_API.Models
             SetSkillsAndSavingThrows();
             SetLevel1HitPoints();
             CalculateArmorClass();
-            CalculateInitiative();
             BackStoryDetails = BackStory.BackStory.GetBackstory(this);
+            Initiative = CalculateInitiative();
         }
 
         public Character(string specificClass)
@@ -413,6 +412,7 @@ namespace DND_5E_SRD_API.Models
             CalculateArmorClass();
             CalculateInitiative();
             BackStoryDetails = BackStory.BackStory.GetBackstory(this);
+            Initiative = CalculateInitiative();
         }
     }
 }

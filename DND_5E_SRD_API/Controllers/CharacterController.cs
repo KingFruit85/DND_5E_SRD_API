@@ -1,18 +1,37 @@
 ﻿using DND_5E_SRD_API.Models;
+using DND_5E_SRD_API.Models.BackStory;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace DND_5E_SRD_API.Controllers
 {
+
+    public class WeatherForecast
+    {
+        public DateTimeOffset Date { get; set; }
+        public int TemperatureCelsius { get; set; }
+        public string? Summary { get; set; }
+    }
+
     [ApiController]
     [Route("[controller]")]
     public class CharacterController : Controller
     {
-        [HttpGet]
-        public Character Get()
+        private readonly ILogger _logger;
+
+        public CharacterController(ILogger<CharacterController> logger)
         {
-            return new Character();
+            _logger = logger;
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            return JsonSerializer.Serialize(new Character());
         }
 
         [HttpGet("{id}")]
@@ -37,5 +56,16 @@ namespace DND_5E_SRD_API.Controllers
             int[] rawScores = new AbilityScores().GetRawScores();
             return new AbilityScores().Arrange(id,rawScores);
         }
+    }
+
+    [Route("[controller]")]
+    public class BBackstoryController : Controller
+    {
+        [HttpGet]
+        public static Dictionary<string, string> Get()
+        {
+            return BackStory.GetRandomBackstory();
+        }
+        
     }
 }

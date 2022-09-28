@@ -7,7 +7,7 @@ namespace DND_5E_SRD_API.Models
 
     public class NameLists
     {
-    
+
     public string RemoveAllVowels(string value)
     {
         return Regex.Replace(value,"[aeiou]", "", RegexOptions.IgnoreCase);
@@ -365,5 +365,8 @@ namespace DND_5E_SRD_API.Models
         }
         return FullName;
     }
-    }
+        
+}
+
+    
 }
