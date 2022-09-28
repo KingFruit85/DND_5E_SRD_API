@@ -9,14 +9,6 @@ using System.Text.Json;
 
 namespace DND_5E_SRD_API.Controllers
 {
-
-    public class WeatherForecast
-    {
-        public DateTimeOffset Date { get; set; }
-        public int TemperatureCelsius { get; set; }
-        public string? Summary { get; set; }
-    }
-
     [ApiController]
     [Route("[controller]")]
     public class CharacterController : Controller
